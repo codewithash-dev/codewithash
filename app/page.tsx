@@ -9,7 +9,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
               <Code2 className="w-8 h-8 text-purple-400" />
-              <span className="text-2xl font-bold text-white">Ashley Henderson</span>
+             <span className="text-2xl font-bold text-white">CodeWithAsh</span>
             </div>
             <div className="hidden md:flex gap-8">
               <Link href="#projects" className="text-gray-300 hover:text-purple-400 transition">Projects</Link>
