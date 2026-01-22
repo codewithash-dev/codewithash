@@ -9,7 +9,7 @@ export default function Home() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <Image 
-              src="/ChatGPT_Image_Jan_22__2026__09_31_10_AM.png"
+              src="/logo.png"
               alt="Code With Ash Logo"
               width={40}
               height={40}
@@ -30,13 +30,65 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero/About Section - Centered like Mosh */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+      {/* Hero Section - Side by Side like Mosh */}
+      <section className="min-h-screen grid md:grid-cols-2 items-center gap-12 px-6 pt-20 max-w-7xl mx-auto">
+        {/* Left - Text Content */}
+        <div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Master Coding.<br/>
+            Build Real<br/>
+            Projects. Get<br/>
+            Hired.
+          </h1>
+          <p className="text-lg text-gray-400 mb-8">
+            Structured, no-fluff portfolio that showcases the skills you need to succeed in the real world.
+          </p>
+          <a 
+            href="#projects" 
+            className="inline-block bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition hover:scale-105"
+          >
+            View Projects →
+          </a>
+        </div>
+
+        {/* Right - Code Window */}
+        <div className="hidden md:flex justify-center items-center">
+          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 w-full max-w-lg shadow-2xl">
+            {/* Mac Window Dots */}
+            <div className="flex gap-2 mb-6">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            {/* Code */}
+            <pre className="text-sm font-mono">
+              <code>
+                <span className="text-purple-400">const</span> <span className="text-blue-300">coder</span> = {'{\n'}
+                {'  '}name: <span className="text-yellow-300">'Master Coder'</span>,{'\n'}
+                {'  '}skills: [<span className="text-yellow-300">'React'</span>, <span className="text-yellow-300">'Node'</span>],{'\n'}
+                {'  '}hardWorker: <span className="text-orange-400">true</span>,{'\n'}
+                {'  '}problemSolver: <span className="text-orange-400">true</span>,{'\n'}
+                {'  '}hireable: <span className="text-green-400">function</span>() {'{\n'}
+                {'    '}<span className="text-purple-400">return</span> ({'\n'}
+                {'      '}<span className="text-blue-300">this</span>.hardWorker &&{'\n'}
+                {'      '}<span className="text-blue-300">this</span>.problemSolver &&{'\n'}
+                {'      '}<span className="text-blue-300">this</span>.skills.length {'>='}  <span className="text-orange-400">5</span>{'\n'}
+                {'    '});{'\n'}
+                {'  '}{'}\n'}
+                {'}'}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section - Centered like Mosh */}
+      <section className="py-32 px-6 bg-black">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-purple-400 text-xl mb-4">Hello,</p>
-          <h1 className="text-6xl md:text-7xl font-bold mb-12">
+          <h2 className="text-5xl md:text-6xl font-bold mb-12">
             I'm Ashley Henderson.
-          </h1>
+          </h2>
           
           <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             I've spent years building real-world applications, and my goal isn't just to write code — it's to help you think like a professional software engineer, master problem-solving, and build skills you'll use for life.
@@ -46,7 +98,7 @@ export default function Home() {
           <div className="flex justify-center mb-12">
             <div className="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
               <Image 
-                src="/700.JPG" 
+                src="/ashley.jpg" 
                 alt="Ashley Henderson"
                 fill
                 className="object-cover"
