@@ -102,24 +102,26 @@ export default function Home() {
       }
     );
 
-    // Stats cards with stagger and 3D flip
-    gsap.fromTo(
-      statsRef.current?.children || [],
-      { opacity: 0, y: 50, rotateY: 90, scale: 0.5 },
-      {
-        opacity: 1,
-        y: 0,
-        rotateY: 0,
-        scale: 1,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: 'top 80%',
-        },
-      }
-    );
+// Stats cards with stagger and 3D flip
+if (statsRef.current) {
+  gsap.fromTo(
+    Array.from((statsRef.current as HTMLElement)?.children || []),
+    { opacity: 0, y: 50, rotateY: 90, scale: 0.5 },
+    {
+      opacity: 1,
+      y: 0,
+      rotateY: 0,
+      scale: 1,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: statsRef.current,
+        start: 'top 80%',
+      },
+    }
+  );
+}
 
     // Section cards with curtain reveal
     sectionRefs.current.forEach((section, index) => {
