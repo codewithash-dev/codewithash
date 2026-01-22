@@ -92,36 +92,36 @@ export default function Home() {
     gsap.fromTo(
       heroRef.current,
       { opacity: 0, y: 100, rotateX: 20 },
-      { 
-        opacity: 1, 
-        y: 0, 
+      {
+        opacity: 1,
+        y: 0,
         rotateX: 0,
-        duration: 1.5, 
+        duration: 1.5,
         ease: 'power3.out',
         delay: 1.2,
       }
     );
 
-// Stats cards with stagger and 3D flip
-if (statsRef.current) {
-  gsap.fromTo(
-    Array.from((statsRef.current as HTMLElement)?.children || []),
-    { opacity: 0, y: 50, rotateY: 90, scale: 0.5 },
-    {
-      opacity: 1,
-      y: 0,
-      rotateY: 0,
-      scale: 1,
-      duration: 1,
-      stagger: 0.15,
-      ease: 'power4.out',
-      scrollTrigger: {
-        trigger: statsRef.current,
-        start: 'top 80%',
-      },
+    // Stats cards with stagger and 3D flip
+    if (statsRef.current) {
+      gsap.fromTo(
+        Array.from((statsRef.current as HTMLElement)?.children || []),
+        { opacity: 0, y: 50, rotateY: 90, scale: 0.5 },
+        {
+          opacity: 1,
+          y: 0,
+          rotateY: 0,
+          scale: 1,
+          duration: 1,
+          stagger: 0.15,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
     }
-  );
-}
 
     // Section cards with curtain reveal
     sectionRefs.current.forEach((section, index) => {
@@ -258,14 +258,14 @@ if (statsRef.current) {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center hover:opacity-80 transition">
-  <img 
-    src="/logo.png"
-    alt="Logo"
-    className="w-16 h-16 rounded-lg"
-  />
-</a>
-          
+          <a href="/" className="flex items-center hover:opacity-80 transition">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-16 h-16 rounded-lg"
+            />
+          </a>
+
           <div className="flex gap-8 items-center">
             <a href="/projects" className="text-gray-300 hover:text-white transition">
               Projects
@@ -281,7 +281,7 @@ if (statsRef.current) {
       <section className="min-h-screen flex items-center px-6 pt-20 relative z-10">
         <div ref={heroRef} className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center w-full">
           <div>
-            <h1 
+            <h1
               ref={titleRef}
               className="text-5xl md:text-6xl font-bold mb-6 leading-tight perspective-1000"
             >
@@ -290,9 +290,9 @@ if (statsRef.current) {
             <p className="text-lg text-gray-400 mb-8">
               Structured, no-fluff portfolio that showcases the skills you need to succeed in the real world.
             </p>
-            <a 
+            <a
               ref={(el) => { if (el) buttonRefs.current[0] = el; }}
-              href="/projects" 
+              href="/projects"
               className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_100%] animate-gradient hover:shadow-2xl hover:shadow-purple-500/50 text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
             >
               View Projects →
@@ -335,15 +335,15 @@ if (statsRef.current) {
           <h2 className="text-5xl md:text-6xl font-bold mb-12">
             I'm Ashley Henderson.
           </h2>
-          
+
           <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             I've spent years building real-world applications, and my goal isn't just to write code — it's to help you think like a professional software engineer, master problem-solving, and build skills you'll use for life.
           </p>
 
           <div className="flex justify-center mb-12 parallax-element">
             <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl hover:shadow-purple-500/30 transition-shadow duration-500">
-              <img 
-                src="/ashley.jpg" 
+              <img
+                src="/ashley.jpg"
                 alt="Ashley Henderson"
                 className="w-full h-auto"
               />
@@ -421,7 +421,7 @@ if (statsRef.current) {
                   <div className="flex gap-4 mb-6">
                     <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                       <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                       </svg>
                     </div>
                     <div className="flex-1 space-y-2">
@@ -492,7 +492,7 @@ if (statsRef.current) {
                     </div>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-40 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-3xl transform rotate-12 shadow-2xl" style={{marginLeft: '120px', marginTop: '80px'}}></div>
+                    <div className="w-32 h-40 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-3xl transform rotate-12 shadow-2xl" style={{ marginLeft: '120px', marginTop: '80px' }}></div>
                   </div>
                 </div>
               </div>
@@ -506,8 +506,8 @@ if (statsRef.current) {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-80 h-80 bg-gradient-to-br from-teal-900 to-cyan-900 rounded-full shadow-2xl flex items-center justify-center">
                     <svg className="w-64 h-64 opacity-20" viewBox="0 0 100 100" fill="currentColor">
-                      <circle cx="50" cy="30" r="8"/>
-                      <path d="M30 45 L50 30 L70 45 L70 70 L30 70 Z" opacity="0.6"/>
+                      <circle cx="50" cy="30" r="8" />
+                      <path d="M30 45 L50 30 L70 45 L70 70 L30 70 Z" opacity="0.6" />
                     </svg>
                   </div>
                 </div>
@@ -568,11 +568,11 @@ if (statsRef.current) {
               <div className="relative w-full max-w-md">
                 <div className="grid grid-cols-3 gap-4 perspective-1000">
                   {[
-                    '#8b5cf6', '#ec4899', '#f97316', 
-                    '#06b6d4', '#10b981', '#f59e0b', 
+                    '#8b5cf6', '#ec4899', '#f97316',
+                    '#06b6d4', '#10b981', '#f59e0b',
                     '#6366f1', '#ef4444', '#14b8a6'
                   ].map((color, i) => (
-                    <div 
+                    <div
                       key={i}
                       ref={(el) => { if (el) boxesRef.current[i] = el; }}
                       className="w-20 h-20 rounded-2xl transition shadow-xl cursor-pointer"
@@ -594,14 +594,14 @@ if (statsRef.current) {
                 <div className="w-96 h-72 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl">
                   <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
                     <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
                     </svg>
                   </div>
                   <div className="bg-white/95 rounded-xl px-8 py-3 mb-6 shadow-lg">
                     <p className="text-purple-600 font-bold text-sm">Programming with Mosh</p>
                     <div className="flex items-center gap-1 mt-1">
                       <svg className="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </div>
                   </div>
@@ -619,7 +619,7 @@ if (statsRef.current) {
             <div className="order-1 md:order-2">
               <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
               <p className="text-purple-400 mb-4">Join a global community of learners</p>
@@ -643,19 +643,19 @@ if (statsRef.current) {
             My courses are used by professionals from top companies like Microsoft, Amazon, and Google, helping them sharpen their skills and stay ahead in their fields.
           </p>
           <div className="flex justify-center gap-6">
-            <a 
+            <a
               ref={(el) => { if (el) buttonRefs.current[1] = el; }}
-              href="/courses" 
+              href="/projects"
               className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_100%] animate-gradient hover:shadow-2xl hover:shadow-purple-500/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition"
             >
-              Browse Courses
+              Projects
             </a>
-            <a 
+            <a
               ref={(el) => { if (el) buttonRefs.current[2] = el; }}
-              href="/signup" 
+              href="/contact"
               className="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-[length:200%_100%] animate-gradient hover:shadow-2xl hover:shadow-pink-500/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition"
             >
-              Join for Free
+              Contact
             </a>
           </div>
         </div>
@@ -666,16 +666,16 @@ if (statsRef.current) {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-500 text-sm">© Code with Ash</p>
-            
+
             <div className="flex gap-6">
               <a href="https://github.com/codewithash-dev" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition hover:scale-110">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
               </a>
               <a href="https://www.linkedin.com/in/codewithash/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition hover:scale-110">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
             </div>
