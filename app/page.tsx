@@ -4,21 +4,17 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
+      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <Image 
+          <div className="flex items-center gap-2">
+            <img 
               src="/logo.png"
-              alt="Code With Ash Logo"
-              width={40}
-              height={40}
-              className="rounded-lg"
+              alt="Logo"
+              className="w-8 h-8 rounded-lg"
             />
-            <span className="text-xl font-bold">ASH</span>
+            <span className="text-lg font-bold">ASH</span>
           </div>
           
-          {/* Nav Links */}
           <div className="flex gap-8 items-center">
             <a href="#projects" className="text-gray-300 hover:text-white transition">
               Projects
@@ -30,59 +26,57 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Side by Side like Mosh */}
-      <section className="min-h-screen grid md:grid-cols-2 items-center gap-12 px-6 pt-20 max-w-7xl mx-auto">
-        {/* Left - Text Content */}
-        <div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Master Coding.<br/>
-            Build Real<br/>
-            Projects. Get<br/>
-            Hired.
-          </h1>
-          <p className="text-lg text-gray-400 mb-8">
-            Structured, no-fluff portfolio that showcases the skills you need to succeed in the real world.
-          </p>
-          <a 
-            href="#projects" 
-            className="inline-block bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition hover:scale-105"
-          >
-            View Projects →
-          </a>
-        </div>
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center px-6 pt-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center w-full">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Master Coding.<br/>
+              Build Real<br/>
+              Projects. Get<br/>
+              Hired.
+            </h1>
+            <p className="text-lg text-gray-400 mb-8">
+              Structured, no-fluff portfolio that showcases the skills you need to succeed in the real world.
+            </p>
+            <a 
+              href="#projects" 
+              className="inline-block bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition hover:scale-105"
+            >
+              View Projects →
+            </a>
+          </div>
 
-        {/* Right - Code Window */}
-        <div className="hidden md:flex justify-center items-center">
-          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 w-full max-w-lg shadow-2xl">
-            {/* Mac Window Dots */}
-            <div className="flex gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <div className="hidden md:block">
+            <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 shadow-2xl">
+              <div className="flex gap-2 mb-6">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <pre className="text-sm font-mono leading-relaxed">
+                <code>
+                  <span className="text-purple-400">const</span> <span className="text-blue-300">coder</span> = {'{\n'}
+                  {'  '}name: <span className="text-yellow-300">'Master Coder'</span>,{'\n'}
+                  {'  '}skills: [<span className="text-yellow-300">'React'</span>, <span className="text-yellow-300">'Node'</span>],{'\n'}
+                  {'  '}hardWorker: <span className="text-orange-400">true</span>,{'\n'}
+                  {'  '}problemSolver: <span className="text-orange-400">true</span>,{'\n'}
+                  {'  '}hireable: <span className="text-green-400">function</span>() {'{\n'}
+                  {'    '}<span className="text-purple-400">return</span> ({'\n'}
+                  {'      '}<span className="text-blue-300">this</span>.hardWorker &&{'\n'}
+                  {'      '}<span className="text-blue-300">this</span>.problemSolver &&{'\n'}
+                  {'      '}<span className="text-blue-300">this</span>.skills.length {'>='}  <span className="text-orange-400">5</span>{'\n'}
+                  {'    '});{'\n'}
+                  {'  '}{'}\n'}
+                  {'}'}
+                </code>
+              </pre>
             </div>
-            {/* Code */}
-            <pre className="text-sm font-mono">
-              <code>
-                <span className="text-purple-400">const</span> <span className="text-blue-300">coder</span> = {'{\n'}
-                {'  '}name: <span className="text-yellow-300">'Master Coder'</span>,{'\n'}
-                {'  '}skills: [<span className="text-yellow-300">'React'</span>, <span className="text-yellow-300">'Node'</span>],{'\n'}
-                {'  '}hardWorker: <span className="text-orange-400">true</span>,{'\n'}
-                {'  '}problemSolver: <span className="text-orange-400">true</span>,{'\n'}
-                {'  '}hireable: <span className="text-green-400">function</span>() {'{\n'}
-                {'    '}<span className="text-purple-400">return</span> ({'\n'}
-                {'      '}<span className="text-blue-300">this</span>.hardWorker &&{'\n'}
-                {'      '}<span className="text-blue-300">this</span>.problemSolver &&{'\n'}
-                {'      '}<span className="text-blue-300">this</span>.skills.length {'>='}  <span className="text-orange-400">5</span>{'\n'}
-                {'    '});{'\n'}
-                {'  '}{'}\n'}
-                {'}'}
-              </code>
-            </pre>
           </div>
         </div>
       </section>
 
-      {/* About Section - Centered like Mosh */}
+      {/* About Section */}
       <section className="py-32 px-6 bg-black">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-purple-400 text-xl mb-4">Hello,</p>
@@ -94,21 +88,17 @@ export default function Home() {
             I've spent years building real-world applications, and my goal isn't just to write code — it's to help you think like a professional software engineer, master problem-solving, and build skills you'll use for life.
           </p>
 
-          {/* Photo */}
           <div className="flex justify-center mb-12">
-            <div className="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
-              <Image 
+            <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
+              <img 
                 src="/ashley.jpg" 
                 alt="Ashley Henderson"
-                fill
-                className="object-cover"
-                priority
+                className="w-full h-auto"
               />
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
               <div className="text-5xl font-bold text-purple-400 mb-2">10M+</div>
               <div className="text-gray-400">Projects Built</div>
@@ -119,7 +109,7 @@ export default function Home() {
             </div>
             <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
               <div className="text-5xl font-bold text-pink-400 mb-2">20+</div>
-              <div className="text-gray-400">Years of experience</div>
+              <div className="text-gray-400">Years experience</div>
             </div>
             <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
               <div className="text-5xl font-bold text-orange-400 mb-2">52</div>
@@ -144,77 +134,53 @@ export default function Home() {
             </p>
           </div>
           
-          {/* Horizontal Scroll Container */}
-          <div className="overflow-x-auto pb-8 scrollbar-hide">
-            <div className="flex gap-8 w-max px-4">
+          <div className="overflow-x-auto pb-8">
+            <div className="flex gap-8 w-max">
               
-              {/* Project Card 1 */}
-              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 1</span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">Project Name</h3>
-                  <p className="text-gray-400 mb-4">Brief description of what this project does and the technologies used to build it.</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm border border-purple-500/30">React</span>
-                    <span className="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm border border-purple-500/30">Node.js</span>
+                  <p className="text-gray-400 mb-4">Brief description goes here</p>
+                  <div className="flex gap-2 mb-4">
+                    <span className="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm">React</span>
+                    <span className="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm">Node.js</span>
                   </div>
-                  <a href="#" className="text-purple-400 hover:text-purple-300 transition font-semibold">
+                  <a href="#" className="text-purple-400 hover:text-purple-300 font-semibold">
                     View Project →
                   </a>
                 </div>
               </div>
 
-              {/* Project Card 2 */}
-              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-pink-600 to-pink-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 2</span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">Project Name</h3>
-                  <p className="text-gray-400 mb-4">Brief description of what this project does and the technologies used to build it.</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-pink-600/20 text-pink-400 rounded-full text-sm border border-pink-500/30">Next.js</span>
-                    <span className="px-3 py-1 bg-pink-600/20 text-pink-400 rounded-full text-sm border border-pink-500/30">MongoDB</span>
+                  <p className="text-gray-400 mb-4">Brief description goes here</p>
+                  <div className="flex gap-2 mb-4">
+                    <span className="px-3 py-1 bg-pink-600/20 text-pink-400 rounded-full text-sm">Next.js</span>
                   </div>
-                  <a href="#" className="text-pink-400 hover:text-pink-300 transition font-semibold">
+                  <a href="#" className="text-pink-400 hover:text-pink-300 font-semibold">
                     View Project →
                   </a>
                 </div>
               </div>
 
-              {/* Project Card 3 */}
-              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 3</span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">Project Name</h3>
-                  <p className="text-gray-400 mb-4">Brief description of what this project does and the technologies used to build it.</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-500/30">TypeScript</span>
-                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-500/30">Firebase</span>
+                  <p className="text-gray-400 mb-4">Brief description goes here</p>
+                  <div className="flex gap-2 mb-4">
+                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm">TypeScript</span>
                   </div>
-                  <a href="#" className="text-blue-400 hover:text-blue-300 transition font-semibold">
-                    View Project →
-                  </a>
-                </div>
-              </div>
-
-              {/* Project Card 4 */}
-              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
-                <div className="w-full h-56 bg-gradient-to-br from-orange-600 to-orange-800 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">Project 4</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3">Project Name</h3>
-                  <p className="text-gray-400 mb-4">Brief description of what this project does and the technologies used to build it.</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-orange-600/20 text-orange-400 rounded-full text-sm border border-orange-500/30">React Native</span>
-                    <span className="px-3 py-1 bg-orange-600/20 text-orange-400 rounded-full text-sm border border-orange-500/30">Expo</span>
-                  </div>
-                  <a href="#" className="text-orange-400 hover:text-orange-300 transition font-semibold">
+                  <a href="#" className="text-blue-400 hover:text-blue-300 font-semibold">
                     View Project →
                   </a>
                 </div>
@@ -225,12 +191,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section id="contact" className="py-32 px-6 bg-black">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-center">Contact Us</h2>
+          <h2 className="text-5xl font-bold mb-6 text-center">Contact Us</h2>
           <p className="text-xl text-gray-400 mb-12 text-center">
-            We're here for you: Connect with us for any questions or concerns.
+            Connect with us for any questions or concerns.
           </p>
 
           <form className="space-y-6">
@@ -239,52 +205,27 @@ export default function Home() {
               <input 
                 type="email" 
                 className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
-                placeholder="your@email.com"
               />
             </div>
             <div>
               <label className="block text-gray-300 mb-2">Your message:</label>
               <textarea 
                 rows={6}
-                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none resize-none"
-                placeholder="Type your message here..."
+                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
               ></textarea>
             </div>
             <button 
               type="submit"
-              className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-3 rounded-lg font-semibold transition"
+              className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-3 rounded-lg font-semibold"
             >
               Send
             </button>
           </form>
-
-          <div className="flex justify-center gap-6 mt-12">
-            <a 
-              href="https://github.com/codewithash-dev" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-purple-400 transition"
-            >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/codewithash" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-purple-400 transition"
-            >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+      <footer className="py-8 text-center text-gray-500 text-sm">
         © Code with Ash
       </footer>
     </main>
