@@ -6,14 +6,15 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img 
-              src="/logo.png"
-              alt="Logo"
-              className="w-8 h-8 rounded-lg"
-            />
-            <span className="text-lg font-bold">ASH</span>
-          </div>
+  {/* Logo - Clickable */}
+<a href="/" className="flex items-center gap-2 hover:opacity-80 transition">
+  <img 
+    src="/logo.png"
+    alt="Logo"
+    className="w-8 h-8 rounded-lg"
+  />
+  <span className="text-lg font-bold">ASH</span>
+</a>
           
           <div className="flex gap-8 items-center">
             <a href="#projects" className="text-gray-300 hover:text-white transition">
