@@ -30,72 +30,21 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Side by Side */}
-      <section className="min-h-screen grid md:grid-cols-2 items-center px-6 pt-20">
-        {/* Left - Text Content */}
-        <div className="max-w-2xl">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            Master Coding.<br/>
-            Build Real<br/>
-            Projects. Get<br/>
-            Hired.
-          </h1>
-          <p className="text-xl text-gray-400 mb-8">
-            Structured, no-fluff portfolio that showcases the skills you need to succeed in the real world.
-          </p>
-          <a 
-            href="#projects" 
-            className="inline-block bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition hover:scale-105"
-          >
-            View Projects →
-          </a>
-        </div>
-
-        {/* Right - Code Window */}
-        <div className="hidden md:flex justify-center items-center">
-          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-8 w-full max-w-lg shadow-2xl">
-            {/* Mac Window Dots */}
-            <div className="flex gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            {/* Code */}
-            <pre className="text-sm font-mono">
-              <code>
-                <span className="text-purple-400">const</span> <span className="text-blue-300">coder</span> = {'{\n'}
-                {'  '}name: <span className="text-yellow-300">'Master Coder'</span>,{'\n'}
-                {'  '}skills: [<span className="text-yellow-300">'React'</span>, <span className="text-yellow-300">'Node'</span>],{'\n'}
-                {'  '}hardWorker: <span className="text-orange-400">true</span>,{'\n'}
-                {'  '}problemSolver: <span className="text-orange-400">true</span>,{'\n'}
-                {'  '}hireable: <span className="text-green-400">function</span>() {'{\n'}
-                {'    '}<span className="text-purple-400">return</span> ({'\n'}
-                {'      '}<span className="text-blue-300">this</span>.hardWorker &&{'\n'}
-                {'      '}<span className="text-blue-300">this</span>.problemSolver &&{'\n'}
-                {'      '}<span className="text-blue-300">this</span>.skills.length {'>='}  <span className="text-orange-400">5</span>{'\n'}
-                {'    '});{'\n'}
-                {'  '}{'}\n'}
-                {'}'}
-              </code>
-            </pre>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-black to-purple-900/20">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero/About Section - Centered like Mosh */}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="max-w-5xl mx-auto text-center">
           <p className="text-purple-400 text-xl mb-4">Hello,</p>
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
+          <h1 className="text-6xl md:text-7xl font-bold mb-12">
             I'm Ashley Henderson.
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+          </h1>
+          
+          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             I've spent years building real-world applications, and my goal isn't just to write code — it's to help you think like a professional software engineer, master problem-solving, and build skills you'll use for life.
           </p>
-          
+
           {/* Photo */}
           <div className="flex justify-center mb-12">
-            <div className="relative w-96 h-96 rounded-2xl overflow-hidden border-4 border-purple-500 shadow-2xl shadow-purple-500/50">
+            <div className="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
               <Image 
                 src="/700.JPG" 
                 alt="Ashley Henderson"
@@ -106,30 +55,30 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-700/30 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-purple-400 mb-2">10+</div>
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+              <div className="text-5xl font-bold text-purple-400 mb-2">10M+</div>
               <div className="text-gray-400">Projects Built</div>
             </div>
-            <div className="bg-gradient-to-br from-green-900/30 to-green-800/20 border border-green-700/30 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-green-400 mb-2">5+</div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+              <div className="text-5xl font-bold text-green-400 mb-2">4M</div>
+              <div className="text-gray-400">GitHub Stars</div>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+              <div className="text-5xl font-bold text-pink-400 mb-2">20+</div>
+              <div className="text-gray-400">Years of experience</div>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+              <div className="text-5xl font-bold text-orange-400 mb-2">52</div>
               <div className="text-gray-400">Tech Stacks</div>
-            </div>
-            <div className="bg-gradient-to-br from-pink-900/30 to-pink-800/20 border border-pink-700/30 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-pink-400 mb-2">3</div>
-              <div className="text-gray-400">Realms Governed</div>
-            </div>
-            <div className="bg-gradient-to-br from-orange-900/30 to-orange-800/20 border border-orange-700/30 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-orange-400 mb-2">∞</div>
-              <div className="text-gray-400">Lines of Code</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 px-6 bg-gradient-to-b from-purple-900/20 to-black">
+      <section id="projects" className="py-32 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block p-3 bg-purple-600/20 rounded-full mb-4">
@@ -148,7 +97,7 @@ export default function Home() {
             <div className="flex gap-8 w-max px-4">
               
               {/* Project Card 1 */}
-              <div className="w-96 bg-gradient-to-br from-purple-900/50 to-purple-800/30 backdrop-blur-sm rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-purple-500/30">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 1</span>
                 </div>
@@ -166,7 +115,7 @@ export default function Home() {
               </div>
 
               {/* Project Card 2 */}
-              <div className="w-96 bg-gradient-to-br from-pink-900/50 to-pink-800/30 backdrop-blur-sm rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-pink-500/30">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-pink-600 to-pink-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 2</span>
                 </div>
@@ -184,7 +133,7 @@ export default function Home() {
               </div>
 
               {/* Project Card 3 */}
-              <div className="w-96 bg-gradient-to-br from-blue-900/50 to-blue-800/30 backdrop-blur-sm rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-blue-500/30">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 3</span>
                 </div>
@@ -202,7 +151,7 @@ export default function Home() {
               </div>
 
               {/* Project Card 4 */}
-              <div className="w-96 bg-gradient-to-br from-orange-900/50 to-orange-800/30 backdrop-blur-sm rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-orange-500/30">
+              <div className="w-96 bg-gray-900/50 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-800">
                 <div className="w-full h-56 bg-gradient-to-br from-orange-600 to-orange-800 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold">Project 4</span>
                 </div>
@@ -225,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-6 bg-gradient-to-b from-black to-purple-900/20">
+      <section id="contact" className="py-32 px-6 bg-black">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-center">Contact Us</h2>
           <p className="text-xl text-gray-400 mb-12 text-center">
