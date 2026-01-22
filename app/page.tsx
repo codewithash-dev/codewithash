@@ -16,14 +16,14 @@ export default function Home() {
   <span className="text-lg font-bold">ASH</span>
 </a>
           
-          <div className="flex gap-8 items-center">
-            <a href="#projects" className="text-gray-300 hover:text-white transition">
-              Projects
-            </a>
-            <a href="#contact" className="text-gray-300 hover:text-white transition">
-              Contact
-            </a>
-          </div>
+<div className="flex gap-8 items-center">
+  <a href="/projects" className="text-gray-300 hover:text-white transition">
+    Projects
+  </a>
+  <a href="/contact" className="text-gray-300 hover:text-white transition">
+    Contact
+  </a>
+</div>
         </div>
       </nav>
 
