@@ -79,6 +79,11 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-8 text-center text-gray-500 text-sm">
+        © 2025 Ashley Henderson. All rights reserved.
+      </footer>
     </main>
   );
 }
