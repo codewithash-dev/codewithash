@@ -267,13 +267,16 @@ export default function Home() {
           </a>
 
           <div className="flex gap-8 items-center">
-            <a href="/projects" className="text-gray-300 hover:text-white transition">
-              Projects
-            </a>
-            <a href="/contact" className="text-gray-300 hover:text-white transition">
-              Contact
-            </a>
-          </div>
+  <a href="/projects" className="text-gray-300 hover:text-white transition">
+    Projects
+  </a>
+  <a href="/learning-paths" className="text-gray-300 hover:text-white transition">
+    Learning Paths
+  </a>
+  <a href="/contact" className="text-gray-300 hover:text-white transition">
+    Contact
+  </a>
+</div>
         </div>
       </nav>
 
