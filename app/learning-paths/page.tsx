@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function LearningPaths() {
   const heroRef = useRef(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
+  const cardsRef = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {
     gsap.fromTo(
@@ -38,89 +38,33 @@ export default function LearningPaths() {
   const paths = [
     {
       title: 'Fundamentals',
+      link: '/learning-paths/fundamentals',
       description: 'Essential courses that anyone pursuing a career as a professional software engineer should take. Data structures, algorithms, design patterns, and more!',
       gradient: 'from-pink-500 via-purple-500 to-purple-600',
-      icon: (
-        <svg className="w-32 h-32" viewBox="0 0 200 200" fill="none">
-          <rect x="40" y="50" width="120" height="80" rx="8" fill="url(#grad1)" />
-          <circle cx="60" cy="40" r="20" fill="#FF6B35" />
-          <rect x="100" y="90" width="60" height="40" rx="4" fill="#FF8C42" />
-          <path d="M50 70h40v10h-40z" fill="#4A4A4A" />
-          <path d="M50 85h40v5h-40z" fill="#4A4A4A" />
-          <defs>
-            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#1a1a2e" />
-              <stop offset="100%" stopColor="#16213e" />
-            </linearGradient>
-          </defs>
-        </svg>
-      ),
     },
     {
       title: 'Front-end Development',
+      link: '/learning-paths/front-end',
       description: 'All the courses you need to build beautiful websites. HTML, CSS, JavaScript, React, and more!',
       gradient: 'from-teal-400 via-green-400 to-green-500',
-      icon: (
-        <svg className="w-32 h-32" viewBox="0 0 200 200" fill="none">
-          <rect x="40" y="40" width="120" height="90" rx="8" fill="white" />
-          <rect x="50" y="50" width="40" height="8" rx="4" fill="#A855F7" />
-          <rect x="50" y="65" width="100" height="4" rx="2" fill="#D1D5DB" />
-          <rect x="50" y="75" width="100" height="4" rx="2" fill="#D1D5DB" />
-          <rect x="50" y="85" width="80" height="4" rx="2" fill="#D1D5DB" />
-          <circle cx="165" cy="55" r="15" fill="#EC4899" />
-          <rect x="155" y="100" width="30" height="20" rx="4" fill="#8B5CF6" />
-        </svg>
-      ),
     },
     {
       title: 'Back-end Development',
+      link: '/learning-paths/back-end',
       description: 'All the courses you need to build powerful APIs for web and mobile apps. Node, Django, ASP.NET MVC, MySQL, and more!',
       gradient: 'from-yellow-400 via-orange-400 to-orange-500',
-      icon: (
-        <svg className="w-32 h-32" viewBox="0 0 200 200" fill="none">
-          <rect x="50" y="40" width="100" height="70" rx="8" fill="white" />
-          <rect x="60" y="55" width="80" height="8" rx="4" fill="#3B82F6" />
-          <rect x="60" y="70" width="80" height="8" rx="4" fill="#3B82F6" />
-          <rect x="60" y="85" width="60" height="8" rx="4" fill="#3B82F6" />
-          <rect x="145" y="50" width="30" height="30" rx="6" fill="#6366F1" />
-          <circle cx="80" cy="140" r="12" fill="#8B5CF6" />
-        </svg>
-      ),
     },
     {
       title: 'Mobile Development',
+      link: '/learning-paths/mobile',
       description: 'All the courses you need to build professional, cross-platform mobile apps using React Native.',
       gradient: 'from-orange-500 via-red-400 to-orange-600',
-      icon: (
-        <svg className="w-32 h-32" viewBox="0 0 200 200" fill="none">
-          <rect x="65" y="30" width="70" height="140" rx="12" fill="url(#grad2)" />
-          <rect x="75" y="45" width="50" height="100" rx="4" fill="#3B82F6" />
-          <circle cx="100" cy="155" r="6" fill="#EC4899" />
-          <circle cx="165" cy="70" r="8" fill="#10B981" />
-          <defs>
-            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#5B8DEF" />
-              <stop offset="100%" stopColor="#0063F7" />
-            </linearGradient>
-          </defs>
-        </svg>
-      ),
     },
     {
       title: 'Game Development',
+      link: '/learning-paths/game-dev',
       description: 'The fundamental courses you need to build games.',
       gradient: 'from-blue-400 via-purple-400 to-purple-500',
-      icon: (
-        <svg className="w-32 h-32" viewBox="0 0 200 200" fill="none">
-          <path d="M100 60 L130 100 L100 140 L70 100 Z" fill="white" />
-          <circle cx="90" cy="90" r="8" fill="#10B981" />
-          <circle cx="110" cy="90" r="8" fill="#EF4444" />
-          <circle cx="90" cy="110" r="8" fill="#3B82F6" />
-          <circle cx="110" cy="110" r="8" fill="#F59E0B" />
-          <circle cx="165" cy="60" r="10" fill="#10B981" />
-          <path d="M60 80 Q55 100 60 120" stroke="#8B5CF6" strokeWidth="3" fill="none" />
-        </svg>
-      ),
     },
   ];
 
@@ -156,24 +100,25 @@ export default function LearningPaths() {
 
       <section className="pb-32 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {paths.map((path, index) => (
-            <div
-              key={index}
-              ref={(el) => {
-                if (el) cardsRef.current[index] = el;
-              }}
-              className="group cursor-pointer"
-            >
-              <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105">
+        {paths.map((path, index) => (
+  <a
+  key={index}
+  href={path.link}
+  ref={(el) => {
+    if (el) cardsRef.current[index] = el;
+  }}
+  className="group cursor-pointer block"
+>
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 h-full">
                 <div className={`h-48 bg-gradient-to-br ${path.gradient} flex items-center justify-center relative overflow-hidden`}>
-                  {path.icon}
+                  <div className="text-6xl">💻</div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">{path.title}</h3>
                   <p className="text-gray-400 leading-relaxed">{path.description}</p>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
