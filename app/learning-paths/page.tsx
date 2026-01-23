@@ -11,14 +11,12 @@ export default function LearningPaths() {
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    // Hero animation
     gsap.fromTo(
       heroRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
     );
 
-    // Cards stagger animation
     gsap.fromTo(
       cardsRef.current,
       { opacity: 0, y: 100, scale: 0.8 },
@@ -128,7 +126,6 @@ export default function LearningPaths() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition">
@@ -148,7 +145,6 @@ export default function LearningPaths() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
         <div ref={heroRef} className="max-w-5xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">No More Guesswork</h1>
@@ -158,7 +154,6 @@ export default function LearningPaths() {
         </div>
       </section>
 
-      {/* Learning Paths Grid */}
       <section className="pb-32 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {paths.map((path, index) => (
@@ -183,7 +178,6 @@ export default function LearningPaths() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-12 px-6 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
