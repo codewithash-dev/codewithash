@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import CookieConsent from "react-cookie-consent";
 
-const geistSans = Geist({
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 });
-
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
-}
+};
 
 export default function RootLayout({
   children,
@@ -35,6 +37,31 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Deny"
+          enableDeclineButton
+          cookieName="codewithash-cookie-consent"
+          style={{ background: "#000", borderTop: "1px solid #333" }}
+          buttonStyle={{ 
+            background: "linear-gradient(to right, #9333ea, #ec4899)", 
+            color: "#fff", 
+            borderRadius: "0.5rem",
+            padding: "0.75rem 2rem",
+            fontWeight: "600"
+          }}
+          declineButtonStyle={{
+            background: "#374151",
+            color: "#fff",
+            borderRadius: "0.5rem",
+            padding: "0.75rem 2rem",
+            fontWeight: "600"
+          }}
+          expires={365}
+        >
+          Our website uses cookies to give you the best and most relevant experience. By clicking on accept, you give your consent to the use of cookies as per our privacy policy.
+        </CookieConsent>
       </body>
     </html>
   );
