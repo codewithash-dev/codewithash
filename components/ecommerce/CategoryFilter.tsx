@@ -15,8 +15,8 @@ export default function CategoryFilter({
         onClick={() => onSelect('all')}
         className={`px-4 py-2 rounded ${
           selected === 'all'
-            ? 'bg-black text-white'
-            : 'bg-gray-200 hover:bg-gray-300'
+            ? 'bg-white text-black'
+            : 'bg-gray-800 text-white hover:bg-gray-700'
         }`}
       >
         All
@@ -27,8 +27,8 @@ export default function CategoryFilter({
           onClick={() => onSelect(category)}
           className={`px-4 py-2 rounded ${
             selected === category
-              ? 'bg-black text-white'
-              : 'bg-gray-200 hover:bg-gray-300'
+              ? 'bg-white text-black'
+              : 'bg-gray-800 text-white hover:bg-gray-700'
           }`}
         >
           {category}
