@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const heroRef = useRef(null);
   const codeBlockRef = useRef(null);
+  const ashleyRef = useRef(null);
   const statsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
@@ -22,6 +23,21 @@ export default function Home() {
       codeBlockRef.current,
       { opacity: 0, x: 100 },
       { opacity: 1, x: 0, duration: 1, delay: 0.3, ease: 'power3.out' }
+    );
+
+    gsap.fromTo(
+      ashleyRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: ashleyRef.current,
+          start: 'top 80%',
+        },
+      }
     );
 
     statsRef.current.forEach((stat, index) => {
@@ -75,6 +91,7 @@ export default function Home() {
             <div
               key={i}
               className="absolute w-1 h-1 bg-purple-500 rounded-full animate-pulse"
+              suppressHydrationWarning
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -128,6 +145,23 @@ export default function Home() {
                 </code>
               </pre>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section ref={ashleyRef} className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-purple-400 text-sm uppercase tracking-wider mb-4">Hello,</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">I'm Ashley Henderson.</h2>
+          <p className="text-xl text-gray-400 mb-12 leading-relaxed max-w-3xl mx-auto">
+            I've spent years building real-world applications, and my goal isn't just to write code — it's to help you think like a professional software engineer, master problem-solving, and build skills you'll use for life.
+          </p>
+          <div className="max-w-3xl mx-auto">
+            <img 
+              src="/hero-image.png" 
+              alt="Ashley Henderson" 
+              className="w-full rounded-2xl shadow-2xl"
+            />
           </div>
         </div>
       </section>
