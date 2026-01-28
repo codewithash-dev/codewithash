@@ -8,25 +8,25 @@ export default function EcommerceNavbar() {
   const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-black text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link href="/projects/ecommerce" className="text-2xl font-bold">
             CodeWithAsh Store
           </Link>
           <div className="flex gap-6 items-center">
-            <Link href="/projects/ecommerce/products" className="hover:text-gray-600">
+            <Link href="/projects/ecommerce/products" className="hover:text-gray-300">
               Products
             </Link>
-            <Link href="/projects/ecommerce/cart" className="hover:text-gray-600 relative">
+            <Link href="/projects/ecommerce/cart" className="hover:text-gray-300 relative">
               Cart
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-white text-black rounded-full w-5 h-5 text-xs flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
             </Link>
-            <Link href="/projects/ecommerce/admin" className="hover:text-gray-600">
+            <Link href="/projects/ecommerce/admin" className="hover:text-gray-300">
               Admin
             </Link>
           </div>

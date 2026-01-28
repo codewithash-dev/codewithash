@@ -30,43 +30,43 @@ export default function AdminProductsPage() {
     fetchProducts();
   }
 
-  if (loading) return <div className="max-w-7xl mx-auto px-4 py-8">Loading...</div>;
+  if (loading) return <div className="max-w-7xl mx-auto px-4 py-8 text-white">Loading...</div>;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">Products</h2>
+        <h2 className="text-3xl font-bold text-white">Products</h2>
         <Link
           href="/projects/ecommerce/admin/products/new"
-          className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800"
+          className="bg-white text-black px-6 py-3 rounded hover:bg-gray-200"
         >
           Add Product
         </Link>
       </div>
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-gray-900 rounded-lg shadow overflow-hidden">
         <table className="w-full">
-          <thead className="bg-gray-50">
+          <thead className="bg-gray-800">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">
                 Name
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">
                 Price
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">
                 Category
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">
                 Stock
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y">
+          <tbody className="divide-y divide-gray-800">
             {products.map((product) => (
-              <tr key={product.id}>
+              <tr key={product.id} className="text-gray-300">
                 <td className="px-6 py-4">{product.name}</td>
                 <td className="px-6 py-4">${product.price.toFixed(2)}</td>
                 <td className="px-6 py-4">{product.category}</td>
@@ -74,7 +74,7 @@ export default function AdminProductsPage() {
                 <td className="px-6 py-4">
                   <button
                     onClick={() => deleteProduct(product.id)}
-                    className="text-red-500 hover:text-red-700"
+                    className="text-red-400 hover:text-red-300"
                   >
                     Delete
                   </button>
