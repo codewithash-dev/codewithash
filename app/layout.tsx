@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Code with Ash - Full Stack Developer Portfolio',
-  description: 'Portfolio showcasing full-stack development projects and learning paths',
+  title: 'Code with Ash',
+  description: 'Portfolio',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
