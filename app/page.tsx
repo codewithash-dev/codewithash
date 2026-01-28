@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TypeAnimation } from 'react-type-animation';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,21 +128,19 @@ export default function Home() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <pre className="text-sm md:text-base overflow-x-auto">
+              <pre className="text-sm md:text-base overflow-x-auto min-h-[300px]">
                 <code className="text-gray-300">
-{`const coder = {
-  name: 'Master Coder',
-  skills: ['React', 'Node'],
-  hardWorker: true,
-  problemSolver: true,
-  hireable: function() {
-    return (
-      this.hardWorker &&
-      this.problemSolver &&
-      this.skills.length >= 5
-    );
-  }
-}`}
+                  <TypeAnimation
+                    sequence={[
+                      'const coder = {\n  name: \'Master Coder\',\n  skills: [\'React\', \'Node\'],\n  hardWorker: true,\n  problemSolver: true,\n  hireable: function() {\n    return (\n      this.hardWorker &&\n      this.problemSolver &&\n      this.skills.length >= 5\n    );\n  }\n}',
+                      3000,
+                    ]}
+                    wrapper="span"
+                    speed={75}
+                    style={{ whiteSpace: 'pre' }}
+                    repeat={Infinity}
+                    cursor={true}
+                  />
                 </code>
               </pre>
             </div>
