@@ -62,7 +62,12 @@ export default function EcommerceProject() {
 
       <section className="pb-20 px-6">
         <div ref={contentRef} className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-2xl h-96 mb-12 flex items-center justify-center">
+          <div className="bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-2xl h-96 mb-12 overflow-hidden">
+            <img 
+              src="/projects/ecommerce.jpg" 
+              alt="E-commerce App" 
+              className="w-full h-full object-cover"
+            />
             <div className="text-8xl">🛒</div>
           </div>
 

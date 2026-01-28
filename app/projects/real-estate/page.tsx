@@ -62,7 +62,12 @@ export default function RealEstateProject() {
 
       <section className="pb-20 px-6">
         <div ref={contentRef} className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 rounded-2xl h-96 mb-12 flex items-center justify-center">
+          <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 rounded-2xl h-96 mb-12 overflow-hidden">
+            <img 
+              src="/projects/real-estate.jpg" 
+              alt="Real Estate App" 
+              className="w-full h-full object-cover"
+            />
             <div className="text-8xl">🏡</div>
           </div>
 
@@ -139,7 +144,7 @@ export default function RealEstateProject() {
             </div>
 
             <div className="flex gap-4">
-              
+              <a
                 href="https://github.com/codewithash-dev"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -147,7 +152,7 @@ export default function RealEstateProject() {
               >
                 View Code →
               </a>
-              
+              <a
                 href="#"
                 className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-semibold transition"
               >
