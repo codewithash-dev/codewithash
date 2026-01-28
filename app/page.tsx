@@ -65,9 +65,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition">
             <img 
-              src="/logo.png"
-              alt="Logo"
-              className="w-16 h-16 rounded-lg"
+                src="/hero-image.png" 
+                alt="Ashley Henderson" 
+               className="w-full rounded-2xl shadow-2xl"
             />
           </a>
           
