@@ -41,6 +41,7 @@ export default function Projects() {
       link: '/projects/ecommerce',
       description: 'Full-stack e-commerce platform with shopping cart, payments, and order management.',
       gradient: 'from-purple-500 via-pink-500 to-red-500',
+      image: '/projects/ecommerce.jpg',
       tags: ['React', 'Node.js', 'Stripe'],
     },
     {
@@ -48,6 +49,7 @@ export default function Projects() {
       link: '/projects/social-media',
       description: 'Social networking platform with posts, likes, comments, and real-time messaging.',
       gradient: 'from-blue-500 via-cyan-500 to-teal-500',
+      image: '/projects/social-media.jpg',
       tags: ['Next.js', 'Firebase', 'Tailwind'],
     },
     {
@@ -55,6 +57,7 @@ export default function Projects() {
       link: '/projects/real-estate',
       description: 'Property listing platform with search, filters, and interactive maps.',
       gradient: 'from-orange-500 via-amber-500 to-yellow-500',
+      image: '/projects/real-estate.jpg',
       tags: ['React', 'MongoDB', 'Mapbox'],
     },
     {
@@ -62,6 +65,7 @@ export default function Projects() {
       link: '/projects/fitness-tracker',
       description: 'Track workouts, nutrition, and progress with charts and goal setting.',
       gradient: 'from-green-500 via-emerald-500 to-teal-500',
+      image: '/projects/fitness-tracker.jpg',
       tags: ['React Native', 'Express', 'Chart.js'],
     },
     {
@@ -69,6 +73,7 @@ export default function Projects() {
       link: '/projects/login-credentials',
       description: 'Secure authentication system with JWT, OAuth, and two-factor authentication.',
       gradient: 'from-indigo-500 via-purple-500 to-pink-500',
+      image: '/projects/login-credentials.jpg',
       tags: ['Node.js', 'JWT', 'OAuth'],
     },
   ];
@@ -94,10 +99,10 @@ export default function Projects() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-12 px-6">
         <div ref={heroRef} className="max-w-5xl mx-auto text-center">
           <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
           </div>
@@ -119,19 +124,20 @@ export default function Projects() {
               }}
               className="group cursor-pointer block"
             >
-              <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 h-full flex flex-col">
-                <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                  <div className="text-6xl">💻</div>
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 h-full">
+                <div className="h-48 overflow-hidden relative">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
+                <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-gray-400 leading-relaxed mb-4 flex-1">{project.description}</p>
+                  <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full"
-                      >
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full">
                         {tag}
                       </span>
                     ))}
