@@ -1,0 +1,35 @@
+'use client';
+
+import Link from 'next/link';
+import { useEffect } from 'react';
+import { useCartStore } from '@/lib/ecommerce-store';
+import EcommerceNavbar from '@/components/ecommerce/Navbar';
+
+export default function SuccessPage() {
+  const clearCart = useCartStore((state) => state.clearCart);
+
+  useEffect(() => {
+    clearCart();
+  }, [clearCart]);
+
+  return (
+    <>
+      <EcommerceNavbar />
+      <div className="max-w-2xl mx-auto px-4 py-16 text-center">
+        <div className="mb-8">
+          <div className="text-6xl mb-4">✅</div>
+          <h1 className="text-4xl font-bold mb-4">Order Successful!</h1>
+          <p className="text-gray-600 mb-8">
+            Thank you for your purchase. You will receive an email confirmation shortly.
+          </p>
+        </div>
+        <Link
+          href="/projects/ecommerce/products"
+          className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 inline-block"
+        >
+          Continue Shopping
+        </Link>
+      </div>
+    </>
+  );
+}
