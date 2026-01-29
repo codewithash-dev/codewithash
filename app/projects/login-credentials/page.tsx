@@ -63,8 +63,10 @@ export default function LoginCredentialsProject() {
 
       <section className="pb-20 px-6">
         <div ref={contentRef} className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl h-96 mb-12 overflow-hidden flex items-center justify-center">
+          <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl overflow-hidden mb-12">
+  <div className="h-96 flex items-center justify-center">
             <div className="text-9xl">🔐</div>
+          </div>
           </div>
 
           <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
