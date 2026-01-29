@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import SnackEmbed from \"../../../components/SnackEmbed\";
 
 export default function LoginCredentialsProject() {
   const heroRef = useRef(null);
@@ -71,6 +72,13 @@ export default function LoginCredentialsProject() {
             <div className="text-8xl">🔐</div>
           </div>
 
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4">Live Demo</h2>
+            <SnackEmbed />
+            <p className="text-sm text-gray-400 mt-2">
+              If the demo does not load, <a href="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web" target="_blank" rel="noopener noreferrer" className="text-indigo-400">open it in a new tab</a>.
+            </p>
+          </div>
           <div className="space-y-12">
             <div>
               <h2 className="text-3xl font-bold mb-4">Overview</h2>
