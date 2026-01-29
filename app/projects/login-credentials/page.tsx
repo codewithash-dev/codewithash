@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import SnackEmbed from \"../../../components/SnackEmbed\";
+import SnackEmbed from '../../../components/SnackEmbed';
 
 export default function LoginCredentialsProject() {
   const heroRef = useRef(null);
