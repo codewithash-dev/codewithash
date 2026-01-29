@@ -155,7 +155,7 @@ export default function Projects() {
                   <div className="px-6 pb-6 flex gap-3">
                     <a
                       href={project.demoUrl}
-                      target="_blank"
+                      
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 rounded-lg font-semibold text-center hover:shadow-lg hover:shadow-purple-500/50 transition text-sm"
