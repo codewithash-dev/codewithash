@@ -44,7 +44,7 @@ export default function Projects() {
       gradient: 'from-blue-600 to-purple-600',
       image: '/projects/ecommerce.jpg',
       tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-      demoUrl: 'https://codewithash.vercel.app/projects/ecommerce',
+      demoUrl: '/projects/ecommerce', 
       codeUrl: 'https://github.com/codewithash-dev/codewithash',
     },
     {
@@ -55,7 +55,7 @@ export default function Projects() {
       gradient: 'from-purple-600 to-pink-600',
       image: '/projects/social-media.jpg',
       tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
-      demoUrl: 'https://codewithash.vercel.app/projects/social-media',
+      demoUrl: '/projects/social-media',
       codeUrl: 'https://github.com/codewithash-dev/codewithash',
     },
     {
