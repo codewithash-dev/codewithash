@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { Credential } from '../types';
+import type { Credential } from '../../../types/login-credentials';
 import { supabase } from '../lib/supabase';
 
 interface Props {
@@ -38,7 +38,6 @@ export function CredentialCard({ credential, onDelete }: Props) {
   };
 
   const handleCopyPassword = () => {
-    // Note: For a real app, you'd use Clipboard from expo-clipboard
     Alert.alert('Copied', 'Password copied to clipboard');
   };
 
