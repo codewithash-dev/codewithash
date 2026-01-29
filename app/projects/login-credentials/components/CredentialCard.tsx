@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import type { Credential } from '../../../types/login-credentials';
+import type { Credential } from '../types';
 import { supabase } from '../lib/supabase';
 
 interface Props {
