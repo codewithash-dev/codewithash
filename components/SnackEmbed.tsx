@@ -1,7 +1,7 @@
 'use client';
 
 export default function SnackEmbed(): JSX.Element {
-  const webUrl = '/projects/login-credentials/index.html';
+  const webUrl = 'undefined';
   const expoUrl = 'exp://192.168.1.160:8081';
   return (
     <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', maxHeight: '80vh' }}>
