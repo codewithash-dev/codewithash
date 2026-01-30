@@ -71,6 +71,45 @@ export default function FitnessTrackerProject() {
             <div className="text-8xl">💪</div>
           </div>
 
+          <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold mb-6 text-center">Try It Live</h2>
+            <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
+              <a 
+                href="https://snack.expo.dev/@codewithash-dev/fitness-app?platform=web&preview=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 hover:scale-105 text-center"
+              >
+                🚀 Open Live Demo
+              </a>
+              <a 
+                href="https://github.com/codewithash-dev/codewithash"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gray-800 border border-gray-700 rounded-lg font-semibold hover:bg-gray-700 transition-all duration-300 hover:scale-105 text-center"
+              >
+                👀 View Code on GitHub
+              </a>
+            </div>
+            
+            <div className="bg-black rounded-xl overflow-hidden border border-gray-700">
+              <iframe
+                src="https://snack.expo.dev/@codewithash-dev/fitness-app?platform=web&preview=true&theme=dark"
+                style={{
+                  width: '100%',
+                  height: '700px',
+                  border: 0,
+                }}
+                title="Fitness Tracker Demo"
+                allow="accelerometer; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb"
+                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+              />
+            </div>
+            <p className="text-sm text-gray-400 mt-4 text-center">
+              If the demo doesn't load, <a href="https://snack.expo.dev/@codewithash-dev/fitness-app" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline">open it in a new tab</a>.
+            </p>
+          </div>
+
           <div className="space-y-12">
             <div>
               <h2 className="text-3xl font-bold mb-4">Overview</h2>
@@ -143,16 +182,24 @@ export default function FitnessTrackerProject() {
               </p>
             </div>
 
-            <div className="flex justify-center">
-  <a 
-    href="https://github.com/codewithash-dev"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105"
-  >
-    View Code →
-  </a>
-</div>
+            <div className="flex justify-center gap-4">
+              <a 
+                href="https://snack.expo.dev/@codewithash-dev/fitness-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 hover:scale-105"
+              >
+                Try Live Demo →
+              </a>
+              <a 
+                href="https://github.com/codewithash-dev/codewithash"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 hover:scale-105"
+              >
+                View Code →
+              </a>
+            </div>
           </div>
         </div>
       </section>

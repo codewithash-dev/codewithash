@@ -67,12 +67,15 @@ export default function Projects() {
       tags: ['React', 'MongoDB', 'Mapbox'],
     },
     {
+      id: 'fitness-tracker',
       title: 'Fitness Tracker',
       link: '/projects/fitness-tracker',
       description: 'Track workouts, nutrition, and progress with charts and goal setting.',
       gradient: 'from-green-500 via-emerald-500 to-teal-500',
       image: '/projects/fitness-tracker.jpg',
       tags: ['React Native', 'Express', 'Chart.js'],
+      demoUrl: '/projects/fitness-tracker',
+      codeUrl: 'https://github.com/codewithash-dev/codewithash',
     },
     {
       title: 'Login Credentials System',
@@ -155,7 +158,7 @@ export default function Projects() {
                   <div className="px-6 pb-6 flex gap-3">
                     <a
                       href={project.demoUrl}
-                      
+                      target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 rounded-lg font-semibold text-center hover:shadow-lg hover:shadow-purple-500/50 transition text-sm"
