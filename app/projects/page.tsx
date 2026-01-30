@@ -78,12 +78,15 @@ export default function Projects() {
       codeUrl: 'https://github.com/codewithash-dev/codewithash',
     },
     {
+      id: 'login-credentials',
       title: 'Login Credentials System',
       link: '/projects/login-credentials',
       description: 'Secure authentication system with JWT, OAuth, and two-factor authentication.',
       gradient: 'from-indigo-500 via-purple-500 to-pink-500',
       image: '/projects/login-credentials.jpg',
       tags: ['Node.js', 'JWT', 'OAuth'],
+      demoUrl: 'https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web&preview=true',
+      codeUrl: 'https://github.com/codewithash-dev/login-credentials',
     },
   ];
 
