@@ -9,8 +9,12 @@ export const metadata: Metadata = {
   title: 'CodeWithAsh',
   description: 'Portfolio & Projects by Ashley Henderson',
   icons: {
-    icon: '/logo.png',
+    icon: [
+      { url: '/logo.png', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png' },
+    ],
     apple: '/logo.png',
+    shortcut: '/logo.png',
   },
 };
 
