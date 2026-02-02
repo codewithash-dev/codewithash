@@ -45,7 +45,7 @@ export default function Projects() {
       image: '/projects/ecommerce.jpg',
       tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
       demoUrl: '/projects/ecommerce', 
-      codeUrl: 'https://github.com/codewithash-dev/codewithash',
+      codeUrl: 'https://github.com/codewithash-dev/ecommerce',
     },
     {
       id: 'social-media',
@@ -56,15 +56,18 @@ export default function Projects() {
       image: '/projects/social-media.jpg',
       tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
       demoUrl: '/projects/social-media',
-      codeUrl: 'https://github.com/codewithash-dev/codewithash',
+      codeUrl: 'https://github.com/codewithash-dev/social-media-app',
     },
     {
+      id: 'real-estate',
       title: 'Real Estate Platform',
       link: '/projects/real-estate',
       description: 'Property listing platform with search, filters, and interactive maps.',
       gradient: 'from-orange-500 via-amber-500 to-yellow-500',
       image: '/projects/real-estate.jpg',
       tags: ['React', 'MongoDB', 'Mapbox'],
+      demoUrl: '/projects/real-estate',
+      codeUrl: 'https://github.com/codewithash-dev/real-estate-platform',
     },
     {
       id: 'fitness-tracker',
