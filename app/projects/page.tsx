@@ -75,7 +75,7 @@ export default function Projects() {
       image: '/projects/fitness-tracker.jpg',
       tags: ['React Native', 'Express', 'Chart.js'],
       demoUrl: '/projects/fitness-tracker',
-      codeUrl: 'https://github.com/codewithash-dev/codewithash',
+      codeUrl: 'https://github.com/codewithash-dev/fitforge-expo',
     },
     {
       id: 'login-credentials',
