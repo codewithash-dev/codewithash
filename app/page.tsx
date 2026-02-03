@@ -64,7 +64,7 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white overflow-hidden">
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
+          <a href="/" className="flex items-center gap-2 hover:opacity-80 transition">
             <img 
               src="/logo.png"
               alt="Logo"
