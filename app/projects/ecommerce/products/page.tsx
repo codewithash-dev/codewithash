@@ -47,20 +47,20 @@ export default function ProductsPage() {
 
   if (loading) {
     return (
-      <div className="bg-black min-h-screen">
+      <div className="bg-slate-50 min-h-screen text-gray-900">
         <EcommerceNavbar />
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="text-center text-white">Loading products...</div>
+          <div className="text-center text-gray-600">Loading products...</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-slate-50 min-h-screen text-gray-900">
       <EcommerceNavbar />
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-white">Products</h1>
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">Products</h1>
         <CategoryFilter
           categories={categories}
           selected={selectedCategory}
@@ -72,7 +72,7 @@ export default function ProductsPage() {
           ))}
         </div>
         {filteredProducts.length === 0 && (
-          <div className="text-center text-gray-400 py-12">
+          <div className="text-center text-gray-500 py-12">
             No products found
           </div>
         )}

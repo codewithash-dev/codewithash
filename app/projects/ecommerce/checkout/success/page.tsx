@@ -13,7 +13,7 @@ export default function SuccessPage() {
   }, [clearCart]);
 
   return (
-    <>
+    <div className="bg-slate-50 min-h-screen text-gray-900">
       <EcommerceNavbar />
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
         <div className="mb-8">
@@ -25,11 +25,11 @@ export default function SuccessPage() {
         </div>
         <Link
           href="/projects/ecommerce/products"
-          className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 inline-block"
+          className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-purple-700 hover:to-pink-700 inline-block transition"
         >
           Continue Shopping
         </Link>
       </div>
-    </>
+    </div>
   );
 }

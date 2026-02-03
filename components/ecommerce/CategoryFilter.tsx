@@ -13,10 +13,10 @@ export default function CategoryFilter({
     <div className="flex gap-2 mb-8 flex-wrap">
       <button
         onClick={() => onSelect('all')}
-        className={`px-4 py-2 rounded ${
+        className={`px-4 py-2 rounded border transition ${
           selected === 'all'
-            ? 'bg-white text-black'
-            : 'bg-gray-800 text-white hover:bg-gray-700'
+            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent'
+            : 'bg-white text-gray-700 border-gray-200 hover:border-purple-300 hover:text-purple-700'
         }`}
       >
         All
@@ -25,10 +25,10 @@ export default function CategoryFilter({
         <button
           key={category}
           onClick={() => onSelect(category)}
-          className={`px-4 py-2 rounded ${
+          className={`px-4 py-2 rounded border transition ${
             selected === category
-              ? 'bg-white text-black'
-              : 'bg-gray-800 text-white hover:bg-gray-700'
+              ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent'
+              : 'bg-white text-gray-700 border-gray-200 hover:border-purple-300 hover:text-purple-700'
           }`}
         >
           {category}
