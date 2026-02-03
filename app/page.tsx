@@ -68,9 +68,9 @@ export default function Home() {
             <img 
               src="/logo.png"
               alt="Logo"
-              className="w-16 h-16 rounded-lg"
+              className="w-12 h-12 rounded-lg"
             />
-            <span className="text-white font-bold text-xl tracking-wide">ASH</span>
+            <span className="text-white font-bold text-2xl tracking-wide -ml-1">ASH</span>
           </a>
           
           <div className="flex gap-8 items-center">
