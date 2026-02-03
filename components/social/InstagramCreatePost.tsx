@@ -28,7 +28,7 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
 
     let imageUrl = null;
 
-    // Upload image if present
+    // Upload media if present
     if (image) {
       const fileExt = image.name.split('.').pop();
       const fileName = `${user.id}-${Date.now()}.${fileExt}`;
@@ -83,11 +83,11 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-4 border-b border-gray-800 flex justify-between items-center">
-              <h2 className="text-white font-semibold">Create new post</h2>
-              <button onClick={() => setShowModal(false)} className="text-white hover:text-gray-400">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+              <h2 className="text-gray-900 font-semibold">Create new post</h2>
+              <button onClick={() => setShowModal(false)} className="text-gray-600 hover:text-gray-900">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -99,14 +99,23 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
               <div className="mb-4">
                 {preview ? (
                   <div className="relative">
-                    <img src={preview} alt="Preview" className="w-full aspect-square object-cover rounded-lg" />
+                    {image?.type.startsWith('video/') ? (
+                      <video
+                        src={preview}
+                        className="w-full aspect-square object-cover rounded-lg bg-black"
+                        controls
+                        playsInline
+                      />
+                    ) : (
+                      <img src={preview} alt="Preview" className="w-full aspect-square object-cover rounded-lg" />
+                    )}
                     <button
                       type="button"
                       onClick={() => {
                         setImage(null);
                         setPreview(null);
                       }}
-                      className="absolute top-2 right-2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+                      className="absolute top-2 right-2 bg-black/60 text-white p-2 rounded-full hover:bg-black/80"
                     >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -114,14 +123,14 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
                     </button>
                   </div>
                 ) : (
-                  <label className="w-full aspect-square border-2 border-dashed border-gray-700 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:border-gray-600">
-                    <svg className="w-12 h-12 text-gray-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <label className="w-full aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:border-gray-400">
+                    <svg className="w-12 h-12 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span className="text-gray-400 text-sm">Click to upload photo</span>
+                    <span className="text-gray-500 text-sm">Click to upload photo or video</span>
                     <input
                       type="file"
-                      accept="image/*"
+                      accept="image/*,video/*"
                       onChange={handleImageSelect}
                       className="hidden"
                     />
@@ -134,7 +143,7 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="Write a caption..."
-                className="w-full bg-gray-800 text-white rounded-lg p-4 mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-pink-500"
+                className="w-full bg-gray-50 text-gray-900 rounded-lg p-4 mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-pink-500"
                 rows={4}
               />
 

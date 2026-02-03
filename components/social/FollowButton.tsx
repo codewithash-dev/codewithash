@@ -56,10 +56,10 @@ export default function FollowButton({ userId }: { userId: string }) {
     <button
       onClick={handleFollow}
       disabled={loading}
-      className={`px-6 py-2 rounded-lg font-semibold ${
+      className={`px-6 py-2 rounded-lg font-semibold transition ${
         isFollowing
-          ? 'bg-gray-700 text-white hover:bg-gray-600'
-          : 'bg-blue-500 text-white hover:bg-blue-600'
+          ? 'bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200'
+          : 'bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white hover:opacity-90'
       } disabled:opacity-50`}
     >
       {loading ? '...' : isFollowing ? 'Unfollow' : 'Follow'}

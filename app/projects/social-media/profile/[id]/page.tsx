@@ -60,10 +60,10 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-white">
         <InstagramNavbar />
         <div className="flex items-center justify-center h-64">
-          <div className="w-8 h-8 border-4 border-gray-600 border-t-white rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-gray-300 border-t-pink-500 rounded-full animate-spin"></div>
         </div>
       </div>
     );
@@ -71,17 +71,17 @@ export default function ProfilePage() {
 
   if (!profile) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-white">
         <InstagramNavbar />
         <div className="max-w-4xl mx-auto px-4 py-8">
-          <p className="text-white text-center">User not found</p>
+          <p className="text-gray-700 text-center">User not found</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black pb-20 md:pb-0">
+    <div className="min-h-screen bg-white pb-20 md:pb-0">
       <InstagramNavbar />
       
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -90,11 +90,11 @@ export default function ProfilePage() {
           {/* Avatar */}
           <div className="flex justify-center md:justify-start">
             <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-full p-[3px]">
-              <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
+              <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
                 {profile.avatar_url ? (
                   <img src={profile.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
                 ) : (
-                  <span className="text-white text-5xl">{profile.username[0].toUpperCase()}</span>
+                  <span className="text-gray-900 text-5xl">{profile.username[0].toUpperCase()}</span>
                 )}
               </div>
             </div>
@@ -103,38 +103,38 @@ export default function ProfilePage() {
           {/* Info */}
           <div className="flex-1">
             <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
-              <h1 className="text-white text-2xl">{profile.username}</h1>
+              <h1 className="text-gray-900 text-2xl">{profile.username}</h1>
               <FollowButton userId={profile.id} />
             </div>
 
             {/* Stats */}
             <div className="flex gap-8 mb-6 justify-center md:justify-start">
               <div className="text-center md:text-left">
-                <span className="text-white font-semibold">{posts.length}</span>
-                <span className="text-gray-400 ml-1">posts</span>
+                <span className="text-gray-900 font-semibold">{posts.length}</span>
+                <span className="text-gray-500 ml-1">posts</span>
               </div>
               <div className="text-center md:text-left">
-                <span className="text-white font-semibold">{followers}</span>
-                <span className="text-gray-400 ml-1">followers</span>
+                <span className="text-gray-900 font-semibold">{followers}</span>
+                <span className="text-gray-500 ml-1">followers</span>
               </div>
               <div className="text-center md:text-left">
-                <span className="text-white font-semibold">{following}</span>
-                <span className="text-gray-400 ml-1">following</span>
+                <span className="text-gray-900 font-semibold">{following}</span>
+                <span className="text-gray-500 ml-1">following</span>
               </div>
             </div>
 
             {/* Bio */}
             <div className="text-center md:text-left">
-              <p className="text-white font-semibold">{profile.full_name}</p>
-              {profile.bio && <p className="text-gray-300 mt-2">{profile.bio}</p>}
+              <p className="text-gray-900 font-semibold">{profile.full_name}</p>
+              {profile.bio && <p className="text-gray-600 mt-2">{profile.bio}</p>}
             </div>
           </div>
         </div>
 
         {/* Posts Grid */}
-        <div className="border-t border-gray-800 pt-12">
+        <div className="border-t border-gray-200 pt-12">
           <div className="flex justify-center gap-12 mb-8">
-            <button className="flex items-center gap-2 text-white font-semibold border-t-2 border-white pt-3 -mt-[49px]">
+            <button className="flex items-center gap-2 text-gray-900 font-semibold border-t-2 border-gray-900 pt-3 -mt-[49px]">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <rect x="3" y="3" width="7" height="7" />
                 <rect x="14" y="3" width="7" height="7" />
@@ -149,11 +149,20 @@ export default function ProfilePage() {
             <div className="grid grid-cols-3 gap-1 md:gap-4">
               {posts.map((post) => (
                 <Link key={post.id} href={`/projects/social-media/post/${post.id}`}>
-                  <div className="aspect-square bg-gray-900 hover:opacity-75 transition cursor-pointer relative group">
+                  <div className="aspect-square bg-gray-100 hover:opacity-90 transition cursor-pointer relative group">
                     {post.image_url ? (
                       <>
-                        <img src={post.image_url} alt="" className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        {/\.(mp4|mov|webm|ogg)(\?|$)/i.test(post.image_url) ? (
+                          <video
+                            src={post.image_url}
+                            className="w-full h-full object-cover bg-black"
+                            muted
+                            playsInline
+                          />
+                        ) : (
+                          <img src={post.image_url} alt="" className="w-full h-full object-cover" />
+                        )}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
                           <div className="flex gap-6 text-white">
                             <div className="flex items-center gap-2">
                               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -171,8 +180,8 @@ export default function ProfilePage() {
                         </div>
                       </>
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gray-900 p-4">
-                        <p className="text-white text-sm text-center line-clamp-6">{post.content}</p>
+                      <div className="w-full h-full flex items-center justify-center bg-gray-100 p-4">
+                        <p className="text-gray-700 text-sm text-center line-clamp-6">{post.content}</p>
                       </div>
                     )}
                   </div>
@@ -181,11 +190,11 @@ export default function ProfilePage() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <svg className="w-20 h-20 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-20 h-20 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <p className="text-gray-400 text-lg font-semibold">No Posts Yet</p>
+              <p className="text-gray-500 text-lg font-semibold">No Posts Yet</p>
             </div>
           )}
         </div>

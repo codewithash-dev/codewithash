@@ -27,31 +27,40 @@ export default function ExplorePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-white">
         <InstagramNavbar />
         <div className="flex items-center justify-center h-64">
-          <div className="w-8 h-8 border-4 border-gray-600 border-t-white rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-gray-300 border-t-pink-500 rounded-full animate-spin"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black pb-20 md:pb-0">
+    <div className="min-h-screen bg-white pb-20 md:pb-0">
       <InstagramNavbar />
       
       <div className="max-w-5xl mx-auto px-4 py-6">
-        <h1 className="text-white text-2xl font-semibold mb-6">Explore</h1>
+        <h1 className="text-gray-900 text-2xl font-semibold mb-6">Explore</h1>
 
         {posts.length > 0 ? (
           <div className="grid grid-cols-3 gap-1 md:gap-4">
             {posts.map((post) => (
               <Link key={post.id} href={`/projects/social-media/post/${post.id}`}>
-                <div className="aspect-square bg-gray-900 hover:opacity-75 transition cursor-pointer relative group">
+                <div className="aspect-square bg-gray-100 hover:opacity-90 transition cursor-pointer relative group">
                   {post.image_url ? (
                     <>
-                      <img src={post.image_url} alt="" className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      {/\.(mp4|mov|webm|ogg)(\?|$)/i.test(post.image_url) ? (
+                        <video
+                          src={post.image_url}
+                          className="w-full h-full object-cover bg-black"
+                          muted
+                          playsInline
+                        />
+                      ) : (
+                        <img src={post.image_url} alt="" className="w-full h-full object-cover" />
+                      )}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div className="flex gap-6 text-white">
                           <div className="flex items-center gap-2">
                             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -69,8 +78,8 @@ export default function ExplorePage() {
                       </div>
                     </>
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-900 p-4">
-                      <p className="text-white text-sm text-center line-clamp-6">{post.content}</p>
+                    <div className="w-full h-full flex items-center justify-center bg-gray-100 p-4">
+                      <p className="text-gray-700 text-sm text-center line-clamp-6">{post.content}</p>
                     </div>
                   )}
                 </div>
@@ -79,7 +88,7 @@ export default function ExplorePage() {
           </div>
         ) : (
           <div className="text-center py-20">
-            <p className="text-gray-400 text-lg">No posts to explore yet</p>
+            <p className="text-gray-500 text-lg">No posts to explore yet</p>
           </div>
         )}
       </div>
