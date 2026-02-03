@@ -79,9 +79,9 @@ export default function FrontEndDevelopment() {
     <main className="min-h-screen bg-black text-white">
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 hover:opacity-80 transition">
-            <img src="/logo.png" alt="Logo" className="w-12 h-12 rounded-lg" />
-            <span className="text-white font-bold text-2xl tracking-wide -ml-1">ASH</span>
+          <a href="/" className="flex items-center gap-1 hover:opacity-80 transition">
+            <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-lg" />
+            <span className="text-white font-bold text-2xl tracking-wide leading-none -ml-3">ASH</span>
           </a>
           <div className="flex gap-8 items-center">
             <a href="/projects" className="text-gray-300 hover:text-white transition">
