@@ -35,15 +35,48 @@ export default function SocialLanding() {
         alert(error?.message || 'Error signing up');
       }
     } else {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      if (!error) {
+      if (!error && data.user) {
+        const { data: profile, error: profileError } = await supabase
+          .from('profiles')
+          .select('id, username')
+          .eq('id', data.user.id)
+          .single();
+
+        if (profileError || !profile) {
+          const baseUsername =
+            email.split('@')[0].replace(/[^a-zA-Z0-9_]/g, '').toLowerCase() ||
+            `user${data.user.id.slice(0, 6)}`;
+          let usernameCandidate = baseUsername;
+
+          const insertProfile = async (usernameValue: string) =>
+            supabase.from('profiles').insert({
+              id: data.user.id,
+              username: usernameValue,
+              full_name: fullName || null,
+            });
+
+          let insertResult = await insertProfile(usernameCandidate);
+
+          if (insertResult.error) {
+            usernameCandidate = `${baseUsername}${data.user.id.slice(0, 4)}`;
+            insertResult = await insertProfile(usernameCandidate);
+          }
+
+          if (insertResult.error) {
+            alert(insertResult.error.message || 'Error creating profile');
+            setLoading(false);
+            return;
+          }
+        }
+
         router.push('/projects/social-media/feed');
       } else {
-        alert(error.message);
+        alert(error?.message || 'Error signing in');
       }
     }
 
