@@ -6,6 +6,7 @@ import { Post } from '@/types/social';
 import InstagramPostCard from '@/components/social/InstagramPostCard';
 import InstagramCreatePost from '@/components/social/InstagramCreatePost';
 import InstagramNavbar from '@/components/social/InstagramNavbar';
+import InstagramStories from '@/components/social/InstagramStories';
 import { useAuthStore } from '@/lib/social-store';
 import { useRouter } from 'next/navigation';
 
@@ -70,19 +71,7 @@ export default function FeedPage() {
       
       {/* Stories Section */}
       <div className="max-w-[630px] mx-auto px-4 py-6 border-b border-gray-200">
-        <div className="flex gap-4 overflow-x-auto scrollbar-hide">
-          {/* Your Story */}
-          <div className="flex flex-col items-center gap-1 flex-shrink-0">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-full p-[2px]">
-              <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
-                <span className="text-gray-900 text-lg">{user?.username?.[0]?.toUpperCase()}</span>
-              </div>
-            </div>
-            <span className="text-gray-700 text-xs">Your story</span>
-          </div>
-          
-          {/* Add more stories here */}
-        </div>
+        <InstagramStories />
       </div>
 
       {/* Feed */}

@@ -30,10 +30,10 @@ export default function PostDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-white">
         <InstagramNavbar />
         <div className="flex items-center justify-center h-64">
-          <div className="w-8 h-8 border-4 border-gray-600 border-t-white rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-gray-300 border-t-pink-500 rounded-full animate-spin"></div>
         </div>
       </div>
     );
@@ -41,17 +41,17 @@ export default function PostDetailPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-white">
         <InstagramNavbar />
         <div className="max-w-2xl mx-auto px-4 py-8">
-          <p className="text-white text-center">Post not found</p>
+          <p className="text-gray-700 text-center">Post not found</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black pb-20 md:pb-0">
+    <div className="min-h-screen bg-white pb-20 md:pb-0">
       <InstagramNavbar />
       <div className="max-w-2xl mx-auto px-4 py-8">
         <InstagramPostCard post={post} onUpdate={fetchPost} />

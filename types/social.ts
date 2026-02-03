@@ -19,6 +19,16 @@ export interface Post {
   profiles?: Profile;
 }
 
+export interface Story {
+  id: string;
+  user_id: string;
+  media_url: string;
+  media_type: 'image' | 'video' | null;
+  created_at: string;
+  expires_at: string;
+  profiles?: Profile;
+}
+
 export interface Comment {
   id: string;
   post_id: string;
