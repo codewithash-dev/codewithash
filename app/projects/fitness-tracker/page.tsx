@@ -83,7 +83,7 @@ export default function FitnessTrackerProject() {
                 🚀 Open Live Demo
               </a>
               <a 
-                href="https://github.com/codewithash-dev/codewithash"
+                href="https://github.com/codewithash-dev/codewithash/tree/main/projects/fitforge-expo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-gray-800 border border-gray-700 rounded-lg font-semibold hover:bg-gray-700 transition-all duration-300 hover:scale-105 text-center"
@@ -191,8 +191,8 @@ export default function FitnessTrackerProject() {
               >
                 Try Live Demo →
               </a>
-              <a 
-                href="https://github.com/codewithash-dev/codewithash"
+            <a 
+              href="https://github.com/codewithash-dev/codewithash/tree/main/projects/fitforge-expo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 hover:scale-105"

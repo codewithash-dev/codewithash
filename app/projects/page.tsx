@@ -78,7 +78,7 @@ export default function Projects() {
       image: '/projects/fitness-tracker.jpg',
       tags: ['React Native', 'Express', 'Chart.js'],
       demoUrl: '/projects/fitness-tracker',
-      codeUrl: 'https://github.com/codewithash-dev/fitforge-expo',
+      codeUrl: 'https://github.com/codewithash-dev/codewithash/tree/main/projects/fitforge-expo',
     },
     {
       id: 'login-credentials',
@@ -100,10 +100,9 @@ export default function Projects() {
       image: '/projects/url-shortener.jpg',
       tags: ['React Native', 'Expo', 'Bitly API', 'QR Codes'],
       demoUrl: null,
-      codeUrl: 'https://github.com/codewithash-dev/codewithash-url-shortener',
+      codeUrl: 'https://github.com/codewithash-dev/url-shortener',
     },
   ];
-
   return (
     <main className="min-h-screen bg-black text-white">
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
