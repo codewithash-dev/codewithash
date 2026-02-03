@@ -13,6 +13,8 @@ export default function EditProfilePage() {
   const [saving, setSaving] = useState(false);
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const [checkingUsername, setCheckingUsername] = useState(false);
+  const [usernameAvailable, setUsernameAvailable] = useState<boolean | null>(null);
   const [formData, setFormData] = useState({
     username: '',
     full_name: '',
@@ -61,6 +63,31 @@ export default function EditProfilePage() {
       setAvatarPreview(URL.createObjectURL(file));
     }
   }
+
+  useEffect(() => {
+    if (!formData.username || !user) {
+      setUsernameAvailable(null);
+      return;
+    }
+
+    const timeout = setTimeout(async () => {
+      setCheckingUsername(true);
+      const candidate = formData.username.trim().toLowerCase();
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('id')
+        .eq('username', candidate)
+        .limit(1);
+
+      if (!error) {
+        const takenByOther = data?.some((row) => row.id !== user.id);
+        setUsernameAvailable(!takenByOther);
+      }
+      setCheckingUsername(false);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [formData.username, user]);
 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
@@ -157,7 +184,20 @@ export default function EditProfilePage() {
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />
-            <p className="text-xs text-gray-500 mt-2">Usernames must be unique.</p>
+            <div className="text-xs mt-2">
+              {checkingUsername && (
+                <span className="text-gray-500">Checking availability...</span>
+              )}
+              {!checkingUsername && usernameAvailable === true && (
+                <span className="text-green-600">Username available</span>
+              )}
+              {!checkingUsername && usernameAvailable === false && (
+                <span className="text-red-600">Username taken</span>
+              )}
+              {!checkingUsername && usernameAvailable === null && (
+                <span className="text-gray-500">Usernames must be unique.</span>
+              )}
+            </div>
           </div>
 
           <div>
@@ -192,7 +232,7 @@ export default function EditProfilePage() {
           <div className="flex gap-3">
             <button
               type="submit"
-              disabled={saving}
+              disabled={saving || usernameAvailable === false || checkingUsername}
               className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 disabled:opacity-60"
             >
               {saving ? 'Saving...' : 'Save Changes'}
