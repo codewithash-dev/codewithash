@@ -21,10 +21,6 @@ export default function CookieBanner() {
         flex: 1,
         lineHeight: 1.4,
       }}
-      buttonWrapperStyle={{
-        marginLeft: '16px',
-        gap: '10px',
-      }}
       buttonStyle={{
         background: '#16a34a',
         color: '#fff',
