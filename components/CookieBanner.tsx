@@ -10,26 +10,37 @@ export default function CookieBanner() {
       declineButtonText="Decline"
       enableDeclineButton
       cookieName="codewithash-cookie-consent"
-      style={{ 
-        background: '#000',
-        padding: '20px'
+      style={{
+        background: '#0b0b0b',
+        padding: '10px 16px',
+        fontSize: '13px',
+        alignItems: 'center',
       }}
-      buttonStyle={{ 
-        background: '#fff', 
-        color: '#000', 
-        fontSize: '14px',
+      contentStyle={{
+        margin: 0,
+        flex: 1,
+        lineHeight: 1.4,
+      }}
+      buttonWrapperStyle={{
+        marginLeft: '16px',
+        gap: '10px',
+      }}
+      buttonStyle={{
+        background: '#16a34a',
+        color: '#fff',
+        fontSize: '13px',
         borderRadius: '6px',
-        padding: '12px 24px',
-        fontWeight: '600'
+        padding: '8px 18px',
+        fontWeight: '600',
       }}
       declineButtonStyle={{
-        background: 'transparent',
-        border: '1px solid #fff',
+        background: '#4b5563',
+        border: '1px solid #4b5563',
         color: '#fff',
-        fontSize: '14px',
+        fontSize: '13px',
         borderRadius: '6px',
-        padding: '12px 24px',
-        fontWeight: '600'
+        padding: '8px 18px',
+        fontWeight: '600',
       }}
       expires={150}
     >
