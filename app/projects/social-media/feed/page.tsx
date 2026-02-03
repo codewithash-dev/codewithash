@@ -10,7 +10,7 @@ import { useAuthStore } from '@/lib/social-store';
 import { useRouter } from 'next/navigation';
 
 export default function FeedPage() {
-  const { user } = useAuthStore();
+  const { user, setUser } = useAuthStore();
   const router = useRouter();
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
@@ -29,6 +29,17 @@ export default function FeedPage() {
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) {
       router.push('/projects/social-media');
+      return;
+    }
+
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', session.user.id)
+      .single();
+
+    if (profile) {
+      setUser(profile);
     }
     setLoading(false);
   }

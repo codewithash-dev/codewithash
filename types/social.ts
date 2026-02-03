@@ -12,6 +12,7 @@ export interface Post {
   user_id: string;
   content: string;
   image_url: string | null;
+  video_url: string | null;
   likes_count: number;
   comments_count: number;
   created_at: string;

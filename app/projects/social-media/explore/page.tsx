@@ -45,22 +45,30 @@ export default function ExplorePage() {
 
         {posts.length > 0 ? (
           <div className="grid grid-cols-3 gap-1 md:gap-4">
-            {posts.map((post) => (
-              <Link key={post.id} href={`/projects/social-media/post/${post.id}`}>
-                <div className="aspect-square bg-gray-100 hover:opacity-90 transition cursor-pointer relative group">
-                  {post.image_url ? (
-                    <>
-                      {/\.(mp4|mov|webm|ogg)(\?|$)/i.test(post.image_url) ? (
-                        <video
-                          src={post.image_url}
-                          className="w-full h-full object-cover bg-black"
-                          muted
-                          playsInline
-                        />
-                      ) : (
-                        <img src={post.image_url} alt="" className="w-full h-full object-cover" />
-                      )}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
+            {posts.map((post) => {
+              const mediaUrl = post.video_url || post.image_url;
+              const isVideo = post.video_url
+                ? true
+                : mediaUrl
+                ? /\.(mp4|mov|webm|ogg)(\?|$)/i.test(mediaUrl)
+                : false;
+
+              return (
+                <Link key={post.id} href={`/projects/social-media/post/${post.id}`}>
+                  <div className="aspect-square bg-gray-100 hover:opacity-90 transition cursor-pointer relative group">
+                    {mediaUrl ? (
+                      <>
+                        {isVideo ? (
+                          <video
+                            src={mediaUrl}
+                            className="w-full h-full object-cover bg-black"
+                            muted
+                            playsInline
+                          />
+                        ) : (
+                          <img src={mediaUrl} alt="" className="w-full h-full object-cover" />
+                        )}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div className="flex gap-6 text-white">
                           <div className="flex items-center gap-2">
                             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -83,8 +91,9 @@ export default function ExplorePage() {
                     </div>
                   )}
                 </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         ) : (
           <div className="text-center py-20">

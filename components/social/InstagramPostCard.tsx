@@ -11,8 +11,8 @@ export default function InstagramPostCard({ post, onUpdate }: { post: Post; onUp
   const [isLiked, setIsLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(post.likes_count);
   const [showComments, setShowComments] = useState(false);
-  const mediaUrl = post.image_url;
-  const isVideo = mediaUrl ? /\.(mp4|mov|webm|ogg)(\?|$)/i.test(mediaUrl) : false;
+  const mediaUrl = post.video_url || post.image_url;
+  const isVideo = post.video_url ? true : mediaUrl ? /\.(mp4|mov|webm|ogg)(\?|$)/i.test(mediaUrl) : false;
 
   useEffect(() => {
     checkIfLiked();

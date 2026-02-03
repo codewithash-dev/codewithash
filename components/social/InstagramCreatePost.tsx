@@ -27,22 +27,34 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
     setLoading(true);
 
     let imageUrl = null;
+    let videoUrl = null;
 
     // Upload media if present
     if (image) {
       const fileExt = image.name.split('.').pop();
       const fileName = `${user.id}-${Date.now()}.${fileExt}`;
+      const isVideo = image.type.startsWith('video/');
       
       const { data: uploadData, error: uploadError } = await supabase.storage
         .from('posts')
         .upload(fileName, image);
 
-      if (!uploadError && uploadData) {
+      if (uploadError) {
+        alert(uploadError.message || 'Error uploading media');
+        setLoading(false);
+        return;
+      }
+
+      if (uploadData) {
         const { data: { publicUrl } } = supabase.storage
           .from('posts')
           .getPublicUrl(fileName);
         
-        imageUrl = publicUrl;
+        if (isVideo) {
+          videoUrl = publicUrl;
+        } else {
+          imageUrl = publicUrl;
+        }
       }
     }
 
@@ -51,11 +63,16 @@ export default function InstagramCreatePost({ onPostCreated }: { onPostCreated: 
       user_id: user.id,
       content: content.trim(),
       image_url: imageUrl,
+      video_url: videoUrl,
     });
 
     if (error) {
       console.error('Error creating post:', error);
-      alert('Error creating post');
+      if (error.message?.includes('video_url')) {
+        alert('Missing video_url column in Supabase. Add it, then try again.');
+      } else {
+        alert(error.message || 'Error creating post');
+      }
     } else {
       setContent('');
       setImage(null);
