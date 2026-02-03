@@ -38,7 +38,8 @@
   ],
   "exclude": [
     "node_modules",
-    "app/projects/login-credentials"
+    "app/projects/login-credentials",
+    "projects/fitforge-expo"
   ],
   "extends": "expo/tsconfig.base"
 }
