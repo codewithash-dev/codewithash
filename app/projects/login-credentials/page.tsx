@@ -72,7 +72,7 @@ export default function LoginCredentialsProject() {
           <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
             <h2 className="text-3xl font-bold mb-6 text-center">Try It Live</h2>
             <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
-              <a 
+              <a
                 href="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web&preview=true"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,7 +80,7 @@ export default function LoginCredentialsProject() {
               >
                 🚀 Open Live Demo
               </a>
-              <a 
+              <a
                 href="https://github.com/codewithash-dev/login-credentials"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -89,7 +89,7 @@ export default function LoginCredentialsProject() {
                 👀 View Code on GitHub
               </a>
             </div>
-            
+
             <div className="bg-black rounded-xl overflow-hidden border border-gray-700">
               <iframe
                 src="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web&preview=true&theme=dark"
@@ -202,7 +202,7 @@ export default function LoginCredentialsProject() {
               <h2 className="text-3xl font-bold mb-4">Database Schema</h2>
               <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
                 <pre className="text-sm text-gray-300 overflow-x-auto">
-{`credentials table:
+                  {`credentials table:
   - id (UUID, primary key)
   - user_id (UUID, foreign key to auth.users)
   - title (TEXT)
@@ -232,7 +232,7 @@ export default function LoginCredentialsProject() {
             </div>
 
             <div className="flex justify-center gap-4">
-              <a 
+              <a
                 href="https://snack.expo.dev/@codewithash-dev/login-credentials"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -240,8 +240,8 @@ export default function LoginCredentialsProject() {
               >
                 Try Live Demo →
               </a>
-              <a 
-                href="https://github.com/codewithash-dev/login-credentials"
+              <a
+                href="https://github.com/codewithash-dev/codewithash/tree/main/projects/login-credentials"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105"
