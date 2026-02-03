@@ -51,17 +51,19 @@ export default function SocialLanding() {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#515bd4] flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <h1 className="text-5xl font-bold text-white text-center mb-2">SocialApp</h1>
-        <p className="text-gray-400 text-center mb-8">Connect with friends and share moments</p>
+        <p className="text-white/80 text-center mb-8">Connect with friends and share moments</p>
 
-        <div className="bg-gray-900 rounded-lg p-8">
+        <div className="bg-white rounded-2xl p-8 shadow-2xl border border-white/60">
           <div className="flex gap-4 mb-6">
             <button
               onClick={() => setIsSignUp(false)}
               className={`flex-1 py-2 rounded-lg font-semibold ${
-                !isSignUp ? 'bg-blue-500 text-white' : 'bg-gray-800 text-gray-400'
+                !isSignUp
+                  ? 'bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#515bd4] text-white'
+                  : 'bg-gray-100 text-gray-600'
               }`}
             >
               Sign In
@@ -69,7 +71,9 @@ export default function SocialLanding() {
             <button
               onClick={() => setIsSignUp(true)}
               className={`flex-1 py-2 rounded-lg font-semibold ${
-                isSignUp ? 'bg-blue-500 text-white' : 'bg-gray-800 text-gray-400'
+                isSignUp
+                  ? 'bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#515bd4] text-white'
+                  : 'bg-gray-100 text-gray-600'
               }`}
             >
               Sign Up
@@ -85,14 +89,14 @@ export default function SocialLanding() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-gray-100 text-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#dd2a7b]"
                 />
                 <input
                   type="text"
                   placeholder="Full Name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-gray-100 text-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#dd2a7b]"
                 />
               </>
             )}
@@ -102,7 +106,7 @@ export default function SocialLanding() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-gray-100 text-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#dd2a7b]"
             />
             <input
               type="password"
@@ -110,19 +114,19 @@ export default function SocialLanding() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full bg-gray-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-gray-100 text-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#dd2a7b]"
             />
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 disabled:bg-gray-700"
+              className="w-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#515bd4] text-white py-3 rounded-lg font-semibold hover:opacity-90 disabled:opacity-60"
             >
               {loading ? 'Loading...' : isSignUp ? 'Sign Up' : 'Sign In'}
             </button>
           </form>
         </div>
 
-        <p className="text-center text-gray-500 mt-6 text-sm">
+        <p className="text-center text-white/80 mt-6 text-sm">
           Demo project • Part of CodeWithAsh portfolio
         </p>
       </div>
