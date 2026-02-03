@@ -7,9 +7,11 @@ import { Profile, Post } from '@/types/social';
 import FollowButton from '@/components/social/FollowButton';
 import InstagramNavbar from '@/components/social/InstagramNavbar';
 import Link from 'next/link';
+import { useAuthStore } from '@/lib/social-store';
 
 export default function ProfilePage() {
   const params = useParams();
+  const { user } = useAuthStore();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [posts, setPosts] = useState<Post[]>([]);
   const [followers, setFollowers] = useState(0);
@@ -104,7 +106,16 @@ export default function ProfilePage() {
           <div className="flex-1">
             <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
               <h1 className="text-gray-900 text-2xl">{profile.username}</h1>
-              <FollowButton userId={profile.id} />
+              {user?.id === profile.id ? (
+                <Link
+                  href="/projects/social-media/profile/edit"
+                  className="px-6 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-pink-300 transition"
+                >
+                  Edit profile
+                </Link>
+              ) : (
+                <FollowButton userId={profile.id} />
+              )}
             </div>
 
             {/* Stats */}
@@ -127,6 +138,16 @@ export default function ProfilePage() {
             <div className="text-center md:text-left">
               <p className="text-gray-900 font-semibold">{profile.full_name}</p>
               {profile.bio && <p className="text-gray-600 mt-2">{profile.bio}</p>}
+              {profile.website_url && (
+                <a
+                  href={profile.website_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-pink-600 hover:text-pink-700 mt-2 inline-block"
+                >
+                  {profile.website_url}
+                </a>
+              )}
             </div>
           </div>
         </div>
