@@ -6,8 +6,18 @@ import CookieBanner from '@/components/CookieBanner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CodeWithAsh',
+  title: 'Code with Ash',
   description: 'Portfolio & Projects by Ashley Henderson',
+  openGraph: {
+    title: 'Code with Ash',
+    description: 'Portfolio & Projects by Ashley Henderson',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Code with Ash',
+    description: 'Portfolio & Projects by Ashley Henderson',
+  },
   icons: {
     icon: [
       { url: '/logo.png', sizes: 'any' },
