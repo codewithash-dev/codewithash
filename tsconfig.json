@@ -40,7 +40,8 @@
     "node_modules",
     "app/projects/login-credentials",
     "projects/fitforge-expo",
-    "projects/fitness-app"
+    "projects/fitness-app",
+    "projects/forge-fit-global"
   ],
   "extends": "expo/tsconfig.base"
 }
