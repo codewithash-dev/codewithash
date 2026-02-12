@@ -49,7 +49,7 @@ export default function Contact() {
                 alt="Logo"
                 className="w-10 h-10 rounded-lg"
               />
-              <span className="text-white font-bold text-2xl tracking-wide leading-none -ml-3">ASH</span>
+              <span className="text-white font-bold text-2xl tracking-wide leading-none -ml-3 hidden lg:inline">ASH</span>
             </a>
           
           <div className="flex gap-8 items-center">
@@ -126,7 +126,7 @@ export default function Contact() {
       <footer className="py-12 px-6 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-500 text-sm">© Code with Ash</p>
+            <p className="text-gray-500 text-sm">© 2026 Code with Ash</p>
             
             <div className="flex gap-6">
               <a href="https://github.com/codewithash-dev" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition hover:scale-110">
