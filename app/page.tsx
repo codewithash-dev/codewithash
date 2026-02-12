@@ -62,31 +62,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
-      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-1 hover:opacity-80 transition">
-            <img 
-              src="/logo.png"
-              alt="Logo"
-              className="w-10 h-10 rounded-lg"
-            />
-            <span className="text-white font-bold text-2xl tracking-wide leading-none -ml-3 hidden lg:inline">ASH</span>
-          </a>
-          
-          <div className="flex gap-8 items-center">
-            <a href="/projects" className="text-gray-300 hover:text-white transition">
-              Projects
-            </a>
-            <a href="/learning-paths" className="text-gray-300 hover:text-white transition">
-              Learning Paths
-            </a>
-            <a href="/contact" className="text-gray-300 hover:text-white transition">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
       <section className="min-h-screen flex items-center justify-center px-6 pt-32 pb-20 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(50)].map((_, i) => (

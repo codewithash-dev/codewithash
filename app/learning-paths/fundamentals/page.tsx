@@ -76,26 +76,6 @@ export default function Fundamentals() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-1 hover:opacity-80 transition">
-            <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-lg" />
-            <span className="text-white font-bold text-2xl tracking-wide leading-none -ml-3 hidden lg:inline">ASH</span>
-          </a>
-          <div className="flex gap-8 items-center">
-            <a href="/projects" className="text-gray-300 hover:text-white transition">
-              Projects
-            </a>
-            <a href="/learning-paths" className="text-white font-semibold">
-              Learning Paths
-            </a>
-            <a href="/contact" className="text-gray-300 hover:text-white transition">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
       <section className="pt-32 pb-12 px-6">
         <div ref={heroRef} className="max-w-5xl mx-auto text-center">
           <p className="text-purple-400 text-lg mb-4">Learning Paths</p>
