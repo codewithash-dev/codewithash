@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import CookieBanner from '@/components/CookieBanner';
 import SiteNav from '@/components/SiteNav';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SiteNav />
         {children}
+        <Footer />
         <CookieBanner />
       </body>
     </html>
