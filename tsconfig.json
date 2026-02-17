@@ -24,5 +24,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "app/projects/login-credentials","lib/login-credentials.ts"]
+  "exclude": ["node_modules", "app/projects/login-credentials/lib", "app/projects/login-credentials/types.ts", "lib/login-credentials.ts"]
 }
