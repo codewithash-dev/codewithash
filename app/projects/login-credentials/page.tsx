@@ -54,7 +54,7 @@ export default function LoginCredentialsProject() {
             <h2 className="text-3xl font-bold mb-6 text-center">Try It Live</h2>
             <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
               <a
-                href="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web&preview=true"
+                href="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=ios&preview=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 text-center"
@@ -73,7 +73,7 @@ export default function LoginCredentialsProject() {
 
             <div className="bg-black rounded-xl overflow-hidden border border-gray-700">
               <iframe
-                src="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web&preview=true&theme=dark"
+                src="https://snack.expo.dev/@codewithash-dev/login-credentials?platform=ios&preview=true&theme=dark"
                 style={{
                   width: '100%',
                   height: '700px',

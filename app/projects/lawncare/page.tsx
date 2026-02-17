@@ -71,6 +71,37 @@ export default function LawnCareProject() {
         </div>
       </section>
 
+      {/* Live Demo - Lawn Care OS */}
+      <section className="px-6 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold mb-6 text-center">Live Demo</h2>
+            <p className="text-gray-400 text-center mb-6 max-w-2xl mx-auto">
+              The design inspiration for this project. Explore the full Lawn Care OS website below.
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
+              <a
+                href="https://lawncare.cerolauto.store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-center"
+              >
+                Open in New Tab
+              </a>
+            </div>
+            <div className="bg-black rounded-xl overflow-hidden border border-gray-700">
+              <iframe
+                src="https://lawncare.cerolauto.store/"
+                title="Lawn Care OS"
+                className="w-full"
+                style={{ height: '80vh', minHeight: '600px' }}
+                sandbox="allow-scripts allow-same-origin allow-popups"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Work - Lawn Care design */}
       <section ref={contentRef} className="px-6 py-16">
         <div className="max-w-7xl mx-auto">

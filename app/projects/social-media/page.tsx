@@ -160,7 +160,7 @@ export default function SocialLanding() {
         </div>
 
         <p className="text-center text-white/80 mt-6 text-sm">
-          Demo project • Part of CodeWithAsh portfolio
+          Demo project • Part of Code With Ash portfolio
         </p>
       </div>
     </div>
