@@ -19,6 +19,8 @@ type Project = {
   codeUrl?: string;
   comingSoon: boolean;
   gradient?: string;
+  subtitle?: string;
+  description?: string;
 };
 
 const projects: Project[] = [
@@ -33,6 +35,8 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/codewithash-dev/ecommerce',
     comingSoon: false,
     gradient: 'from-blue-600 to-purple-600',
+    subtitle: 'Stripe Integration',
+    description: 'Full checkout flow with Stripe, cart management, and admin dashboard.',
   },
   {
     id: 'social-media',
@@ -44,6 +48,8 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/codewithash-dev/social-media-app',
     comingSoon: false,
     gradient: 'from-purple-600 to-pink-600',
+    subtitle: 'Instagram-Style Feed',
+    description: 'Posts, comments, likes, and profiles with real-time Supabase backend.',
   },
   {
     id: 'real-estate',
@@ -55,6 +61,8 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/codewithash-dev/real-estate-platform',
     comingSoon: false,
     gradient: 'from-orange-500 to-yellow-500',
+    subtitle: 'Map Integration',
+    description: 'Property listings with search, filters, and interactive Mapbox maps.',
   },
   {
     id: 'fitness-tracker',
@@ -66,6 +74,8 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/codewithash-dev/codewithash/tree/main/projects/fitforge-expo',
     comingSoon: false,
     gradient: 'from-green-500 to-teal-500',
+    subtitle: 'Mobile First',
+    description: 'Workout tracking, progress charts, and cross-platform React Native.',
   },
   {
     id: 'login-credentials',
@@ -77,6 +87,8 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/codewithash-dev/login-credentials',
     comingSoon: false,
     gradient: 'from-indigo-500 to-pink-500',
+    subtitle: 'Secure Auth',
+    description: 'Biometric login, credential storage, and Supabase authentication.',
   },
   {
     id: 'url-shortener',
@@ -88,6 +100,21 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/codewithash-dev/url-shortener',
     comingSoon: false,
     gradient: 'from-teal-500 to-cyan-500',
+    subtitle: 'Expo & React Native',
+    description: 'Create and manage short links with a clean mobile interface.',
+  },
+  {
+    id: 'lawncare',
+    title: 'Lawn Care Style Portfolio',
+    tags: ['Next.js', 'Tailwind', 'GSAP'],
+    image: '/projects/real-estate.jpg',
+    link: '/projects/lawncare',
+    demoUrl: '/projects/lawncare',
+    codeUrl: 'https://github.com/codewithash-dev/codewithash',
+    comingSoon: false,
+    gradient: 'from-emerald-500 to-teal-500',
+    subtitle: 'Premium Portfolio Design',
+    description: 'Dark theme, emerald accents, featured work cards inspired by Lawn Care OS.',
   },
   // Coming Soon - from Code With Nomi style projects
   { id: 'food-delivery-ui', title: 'Food Delivery App UI', tags: ['React Native', 'Tailwind'], comingSoon: true, image: '/projects/Food-Delivery-App.jpg' },
@@ -205,7 +232,9 @@ export default function Projects() {
 
       {/* Project grid - 3 columns like Nomi */}
       <section className="pb-32 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">All Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
@@ -290,6 +319,7 @@ export default function Projects() {
               )}
             </div>
           ))}
+          </div>
         </div>
       </section>
 
