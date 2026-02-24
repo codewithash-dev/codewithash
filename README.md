@@ -1,7 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code with Ash
 
-- **Repo:** [github.com/codewithash-dev/canopy-stone](https://github.com/codewithash-dev/canopy-stone)
-- **Live site:** [canopystone.co](https://canopystone.co)
+Portfolio and site for **Code with Ash** (Ashley Henderson). This repo contains the [codewithash.com](https://www.codewithash.com) Next.js app and the **links-cwa** asset (kept as requested).
+
+- **Repo:** [github.com/codewithash-dev/codewithash](https://github.com/codewithash-dev/codewithash)
+- **Live site:** [www.codewithash.com](https://www.codewithash.com)
+- **Vercel:** [codewithash – Vercel](https://vercel.com/codwithash-projects/codewithash)
 
 ## Getting Started
 

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Providers from "./components/Providers";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,14 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://canopystone.co'),
+  metadataBase: new URL('https://www.codewithash.com'),
   title: 'Code with Ash',
   description: 'Portfolio & Projects by Ashley Henderson',
   openGraph: {
     title: 'Code with Ash',
     description: 'Portfolio & Projects by Ashley Henderson',
     type: 'website',
-    url: 'https://canopystone.co',
+    url: 'https://www.codewithash.com',
   },
   twitter: {
     card: 'summary',
@@ -40,7 +41,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <SiteNav />
+        {children}
+        <SiteFooter />
       </body>
     </html>
   );
