@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# standalone ecommerce app (lives in codewithash-dev/ecommerce repo)
+/ecommerce-standalone

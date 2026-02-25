@@ -1,0 +1,2 @@
+# Force GitHub to show this repo as TypeScript (React/Next.js), not HTML
+* linguist-language=TypeScript

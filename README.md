@@ -6,6 +6,38 @@ Portfolio and site for **Code with Ash** (Ashley Henderson). This repo contains 
 - **Live site:** [www.codewithash.com](https://www.codewithash.com)
 - **Vercel:** [codewithash – Vercel](https://vercel.com/codwithash-projects/codewithash)
 
+## Project structure (the code we wrote)
+
+```
+codewithash/
+├── links-cwa/              # Your links page (kept)
+├── public/                 # Static assets (favicon, images)
+├── src/
+│   ├── app/
+│   │   ├── api/contact/    # Contact form API (Resend)
+│   │   ├── contact/        # Contact page + form
+│   │   ├── learning/       # Learning page
+│   │   ├── privacy/        # Privacy policy page
+│   │   ├── projects/       # Projects page
+│   │   ├── services/       # Services page
+│   │   ├── terms/          # Terms of use page
+│   │   ├── globals.css
+│   │   ├── layout.tsx      # Root layout (nav + footer)
+│   │   ├── page.tsx        # Homepage (Master Coding, About, Stats, Ready to Ship)
+│   │   └── favicon.ico
+│   ├── components/
+│   │   ├── SiteNav.tsx     # Top nav (Projects, Learning, Services, Contact)
+│   │   └── SiteFooter.tsx  # Footer (Terms, Privacy)
+│   ├── lib/                # Shared utilities (add as you grow)
+│   └── types/              # TypeScript types (add as you grow)
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── postcss.config.mjs
+```
+
+All of this is the Code with Ash site: homepage, nav, footer, and every page. Nothing from this list was removed.
+
 ## Getting Started
 
 First, run the development server:

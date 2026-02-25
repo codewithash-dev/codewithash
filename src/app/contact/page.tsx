@@ -1,75 +1,104 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
-export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+const contactSchema = z.object({
+  email: z.string().min(1, "Email is required").email("Please enter a valid email"),
+  message: z.string().min(1, "Message is required").min(10, "Message should be at least 10 characters"),
+});
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus('sending');
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const email = fd.get('email') as string;
-    const message = fd.get('message') as string;
+type ContactFormData = z.infer<typeof contactSchema>;
 
+export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: { email: "", message: "" },
+  });
+
+  async function onSubmit(data: ContactFormData) {
+    setStatus("sending");
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, message }),
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email, message: data.message }),
       });
       if (res.ok) {
-        setStatus('sent');
-        form.reset();
-      } else setStatus('error');
+        setStatus("sent");
+        reset();
+      } else setStatus("error");
     } catch {
-      setStatus('error');
+      setStatus("error");
     }
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
-      <div className="max-w-xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Contact</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          Have a project in mind or want to collaborate? Get in touch.
+    <main className="min-h-screen bg-transparent text-white pt-24 pb-16 px-4 sm:px-6">
+      <div className="max-w-xl mx-auto text-center">
+        <h1 data-gsap="fade-up" className="text-4xl font-bold mb-2">Contact Us</h1>
+        <p data-gsap="fade-up" data-gsap-delay="0.08" className="text-lg text-gray-300 mb-8">
+          Connect with us for any questions or concerns.
         </p>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          data-gsap="fade-up"
+          data-gsap-delay="0.12"
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-4 text-left"
+        >
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+              Your email:
+            </label>
             <input
               id="email"
-              name="email"
               type="email"
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent"
               placeholder="you@example.com"
+              {...register("email")}
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent disabled:opacity-50"
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-rose-400">{errors.email.message}</p>
+            )}
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+              Your message:
+            </label>
             <textarea
               id="message"
-              name="message"
-              required
               rows={5}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-              placeholder="Tell me about your project..."
+              placeholder="Tell us what's on your mind..."
+              {...register("message")}
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent disabled:opacity-50"
             />
+            {errors.message && (
+              <p className="mt-1 text-sm text-rose-400">{errors.message.message}</p>
+            )}
           </div>
-          <button
-            type="submit"
-            disabled={status === 'sending'}
-            className="w-full sm:w-auto bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 disabled:opacity-50 transition"
-          >
-            {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent!' : 'Send message'}
-          </button>
-          {status === 'error' && (
-            <p className="text-sm text-red-600">Something went wrong. Please try again or email directly.</p>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="btn-animate w-full sm:w-auto gradient-cta text-white px-8 py-3 rounded-lg font-semibold disabled:opacity-50 transition hover:opacity-90 disabled:hover:opacity-50 disabled:transform-none"
+            >
+              {status === "sending" ? "Sending..." : status === "sent" ? "Sent!" : "Send"}
+            </button>
+          </div>
+          {status === "error" && (
+            <p className="text-sm text-rose-400">Something went wrong. Please try again or email directly.</p>
           )}
         </form>
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,32 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  /* Darker, richer gradient theme (purple → fuchsia) */
+  --gradient-cta-start: #5b21b6;
+  --gradient-cta-end: #a21caf;
+  --gradient-cta-start-hero: #4c1d95;
+  --gradient-cta-end-hero: #be185d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Primary CTA: darker purple → fuchsia gradient */
+.gradient-cta {
+  background: linear-gradient(to right, var(--gradient-cta-start), var(--gradient-cta-end));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.gradient-cta:hover {
+  filter: brightness(1.05);
+  transform: scale(1.03);
+}
+.gradient-cta:active {
+  transform: scale(0.98);
+}
+.gradient-cta-hero {
+  background: linear-gradient(to right, var(--gradient-cta-start-hero), var(--gradient-cta-end-hero));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.gradient-cta-hero:hover {
+  filter: brightness(1.05);
+  transform: scale(1.03);
+}
+.gradient-cta-hero:active {
+  transform: scale(0.98);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Animated clickable buttons/links (add class .btn-animate to any CTA) */
+.btn-animate {
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
-
-html {
-  scroll-behavior: smooth;
+.btn-animate:hover {
+  transform: scale(1.03);
+}
+.btn-animate:active {
+  transform: scale(0.98);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
