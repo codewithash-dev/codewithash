@@ -86,7 +86,9 @@ export default function HeroCodeBlock() {
       ease: "none",
       onUpdate: () => setVisibleChars(Math.round(obj.progress)),
     });
-    return () => tw.kill();
+    return () => {
+      tw.kill();
+    };
   }, []);
 
   const visibleTokens = getVisibleTokens(visibleChars);
