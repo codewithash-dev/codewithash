@@ -99,53 +99,6 @@ export default function TermsOfUse() {
             jurisdiction without regard to its conflict of law provisions.
           </p>
         </main>
-  
-        {/* INNER FOOTER */}
-        <div className="max-w-2xl mx-auto px-6 pt-6 pb-3 border-t border-neutral-900">
-          <p className="text-xs text-neutral-600 mb-2">© 2026 Code with Ash</p>
-          <div className="flex gap-6">
-            <a href="/terms" className="text-xs text-neutral-600 hover:text-white no-underline">Terms of Use</a>
-            <a href="/privacy" className="text-xs text-neutral-600 hover:text-white no-underline">Privacy Policy</a>
-          </div>
-        </div>
-  
-        {/* MAIN FOOTER */}
-        <footer className="border-t border-neutral-900 px-12 py-6 flex justify-between items-center flex-wrap gap-4 mt-5">
-          <span className="text-xs text-neutral-600">© 2026 Code with Ash</span>
-  
-          <div className="flex gap-5 items-center">
-            {/* YouTube */}
-            <a href="https://www.youtube.com/@CodeWithAshOfficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-neutral-600 hover:text-white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-            </a>
-            {/* Instagram */}
-            <a href="#" aria-label="Instagram" className="text-neutral-600 hover:text-white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12s0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7 .1 2.7.3.3 2.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c.2 4.3 2.6 6.7 7 6.9 1.3.1 1.7.1 5 .1s3.7 0 5-.1c4.3-.2 6.7-2.6 6.9-7 .1-1.3.1-1.7.1-5s0-3.7-.1-5C23.7 2.7 21.3.3 17 .1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>
-            </a>
-            {/* TikTok */}
-            <a href="#" aria-label="TikTok" className="text-neutral-600 hover:text-white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 3.3A4.5 4.5 0 0 1 15.2 0h-3.3v16.4a2.7 2.7 0 0 1-2.7 2.3 2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .5 0 .8.1V10a6 6 0 0 0-.8-.1 6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6V8.2a7.8 7.8 0 0 0 4.6 1.5V6.4a4.5 4.5 0 0 1-2.2-3.1z"/></svg>
-            </a>
-            {/* Facebook */}
-            <a href="https://www.facebook.com/CodeWithAshOfficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-neutral-600 hover:text-white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1C0 18.1 4.4 23.1 10.1 24v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-1.9.9-1.9 1.9v2.2h3.3l-.5 3.5h-2.8V24C19.6 23.1 24 18.1 24 12.1z"/></svg>
-            </a>
-            {/* GitHub */}
-            <a href="#" aria-label="GitHub" className="text-neutral-600 hover:text-white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 3.7 18 4 18 4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12 24 5.4 18.6 0 12 0z"/></svg>
-            </a>
-            {/* LinkedIn */}
-            <a href="#" aria-label="LinkedIn" className="text-neutral-600 hover:text-white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.4v6.2zM5.3 7.4a2.1 2.1 0 0 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0z"/></svg>
-            </a>
-          </div>
-  
-          <div className="flex gap-6">
-            <a href="/terms" className="text-xs text-neutral-600 hover:text-white no-underline">Terms of Use</a>
-            <a href="/privacy" className="text-xs text-neutral-600 hover:text-white no-underline">Privacy Policy</a>
-          </div>
-        </footer>
-  
       </div>
     );
   }
