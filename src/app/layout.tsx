@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.codewithash.com"),
   title: "Code with Ash",
   description: "Portfolio & Projects by Ashley Henderson",
+  icons: {
+    icon: "/images/cwa-logo-mark.png",
+    apple: "/images/cwa-logo-mark.png",
+  },
   openGraph: {
     title: "Code with Ash",
     description: "Portfolio & Projects by Ashley Henderson",

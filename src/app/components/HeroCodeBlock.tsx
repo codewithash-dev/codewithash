@@ -82,7 +82,7 @@ export default function HeroCodeBlock() {
     const obj = ref.current;
     const tw = gsap.to(obj, {
       progress: totalChars,
-      duration: 2.8,
+      duration: 5,
       ease: "none",
       onUpdate: () => setVisibleChars(Math.round(obj.progress)),
     });

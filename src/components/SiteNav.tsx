@@ -6,22 +6,23 @@ import Image from "next/image";
 export default function SiteNav() {
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-14 py-2 flex items-center justify-between">
         <Link
           href="/"
-          className="btn-animate flex items-center gap-2 font-bold text-xl text-white hover:text-gray-200 transition inline-block"
+          className="btn-animate flex flex-nowrap items-center gap-3 hover:opacity-90 transition inline-flex"
         >
-          <span className="relative flex items-center justify-center">
-            <Image
-              src="/images/cwa-logo-mark.png"
-              alt="Code with Ash logo"
-              width={28}
-              height={28}
-              priority
-              className="w-7 h-7"
-            />
+          <Image
+            src="/images/ashley-profile.png"
+            alt="Ashley Henderson"
+            width={40}
+            height={40}
+            priority
+            className="w-10 h-10 rounded-full object-cover ring-2 ring-gray-700 shrink-0"
+          />
+          <span className="flex flex-col items-start justify-center shrink-0 min-w-0">
+            <span className="font-bold text-lg text-white leading-tight whitespace-nowrap">Code With Ash</span>
+            <span className="text-xs text-gray-400 font-normal leading-tight whitespace-nowrap">Build something great!</span>
           </span>
-          ASH
         </Link>
         <div className="flex items-center gap-8 text-sm text-gray-300">
           <Link href="/projects" className="btn-animate hover:text-white font-medium transition inline-block">
