@@ -2,21 +2,21 @@ import Link from "next/link";
 
 export default function EcommerceProjectPage() {
   return (
-    <main className="min-h-screen bg-transparent text-white pt-24 pb-16 px-4 sm:px-6">
+    <main className="min-h-screen bg-white text-slate-900 pt-24 pb-16 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <p
           data-gsap="fade-up"
-          className="text-xs sm:text-sm text-gray-400 mb-3"
+          className="text-xs sm:text-sm text-slate-500 mb-3"
         >
           <Link
             href="/projects"
-            className="hover:text-white transition underline-offset-4 hover:underline"
+            className="hover:text-slate-900 transition underline-offset-4 hover:underline"
           >
             Projects
           </Link>{" "}
           <span className="mx-1">/</span>
-          <span className="text-gray-300">E-Commerce Store</span>
+          <span className="text-slate-700">E-Commerce Store</span>
         </p>
 
         {/* Title + description */}
@@ -30,7 +30,7 @@ export default function EcommerceProjectPage() {
           <p
             data-gsap="fade-up"
             data-gsap-delay="0.08"
-            className="text-base sm:text-lg text-gray-300 max-w-2xl"
+            className="text-base sm:text-lg text-slate-600 max-w-2xl"
           >
             Full-stack e-commerce built with Next.js, Supabase, and Stripe. Includes
             products, cart management, checkout flow, and an admin experience for
@@ -74,7 +74,7 @@ export default function EcommerceProjectPage() {
         >
           <div>
             <h2 className="text-xl font-semibold mb-3">What&apos;s Included</h2>
-            <ul className="space-y-2 text-sm sm:text-base text-gray-300 list-disc list-inside">
+            <ul className="space-y-2 text-sm sm:text-base text-slate-600 list-disc list-inside">
               <li>Product listing grid with filtering-ready structure.</li>
               <li>Persistent cart with add, remove, and quantity updates.</li>
               <li>Checkout flow wired for Stripe payments.</li>
@@ -95,7 +95,7 @@ export default function EcommerceProjectPage() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="inline-flex items-center rounded-full bg-gray-900 border border-gray-700 px-3 py-1 text-gray-200"
+                  className="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-3 py-1 text-slate-700"
                 >
                   {tech}
                 </span>

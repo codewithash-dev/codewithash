@@ -63,16 +63,20 @@ export default function EcommerceCartPage() {
   );
 
   return (
-    <main className="min-h-screen bg-transparent text-white pb-16">
+    <main className="min-h-screen bg-white text-slate-900 pb-16">
       <StoreNav cartCount={count} />
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
-        <h1 data-gsap="fade-up" className="text-2xl font-bold mb-6">
+        <h1 data-gsap="fade-up" className="text-2xl font-bold mb-2">
           Cart
         </h1>
+        <p className="text-sm text-slate-600 mb-6">
+          Review your items before checkout. This is a demo cart — no payments
+          are processed.
+        </p>
 
         {entries.length === 0 ? (
-          <p data-gsap="fade-up" className="text-gray-400 mb-6">
+          <p data-gsap="fade-up" className="text-slate-500 mb-6">
             Your cart is empty.
           </p>
         ) : (
@@ -83,11 +87,11 @@ export default function EcommerceCartPage() {
               return (
                 <li
                   key={id}
-                  className="flex items-center justify-between rounded-xl border border-gray-800 bg-[#0a0a0a] px-4 py-3"
+                  className="flex items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
                 >
                   <div>
-                    <p className="font-medium text-white">{product.name}</p>
-                    <p className="text-sm text-gray-400">
+                    <p className="font-medium text-slate-900">{product.name}</p>
+                    <p className="text-sm text-slate-600">
                       ${product.price.toFixed(2)} × {q}
                     </p>
                   </div>
@@ -95,7 +99,7 @@ export default function EcommerceCartPage() {
                     <button
                       type="button"
                       onClick={() => updateCart(id, -1)}
-                      className="w-8 h-8 rounded border border-gray-600 text-gray-300 hover:bg-gray-800 transition"
+                      className="w-8 h-8 rounded border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
                     >
                       −
                     </button>
@@ -116,11 +120,8 @@ export default function EcommerceCartPage() {
 
         {entries.length > 0 && (
           <div data-gsap="fade-up" className="border-t border-gray-800 pt-4 mb-6">
-            <p className="text-lg font-semibold text-white">
+            <p className="text-lg font-semibold text-slate-900">
               Subtotal: ${subtotal.toFixed(2)}
-            </p>
-            <p className="text-sm text-gray-500 mt-1">
-              Checkout is a demo — no payment is processed.
             </p>
           </div>
         )}
@@ -134,7 +135,7 @@ export default function EcommerceCartPage() {
           </Link>
           <Link
             href="/projects/ecommerce"
-            className="text-gray-400 hover:text-white transition text-sm"
+            className="text-slate-500 hover:text-slate-900 transition text-sm"
           >
             ← Back to project
           </Link>

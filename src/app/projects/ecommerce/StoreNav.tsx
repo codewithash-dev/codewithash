@@ -8,24 +8,24 @@ type StoreNavProps = {
 
 export default function StoreNav({ cartCount = 0 }: StoreNavProps) {
   return (
-    <header className="border-b border-gray-800 bg-black/80 backdrop-blur-sm sticky top-14 z-40">
+    <header className="border-b border-slate-200 bg-white sticky top-14 z-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
         <Link
           href="/projects/ecommerce/products"
-          className="font-semibold text-white hover:text-gray-200 transition"
+          className="font-semibold text-slate-900 hover:text-slate-700 transition"
         >
           CodeWithAsh Store
         </Link>
-        <nav className="flex items-center gap-6 text-sm text-gray-300">
+        <nav className="flex items-center gap-6 text-sm text-slate-600">
           <Link
             href="/projects/ecommerce/products"
-            className="hover:text-white font-medium transition"
+            className="hover:text-slate-900 font-medium transition"
           >
             Products
           </Link>
           <Link
             href="/projects/ecommerce/cart"
-            className="hover:text-white font-medium transition inline-flex items-center gap-1"
+              className="hover:text-slate-900 font-medium transition inline-flex items-center gap-1"
           >
             Cart
             {cartCount > 0 && (
@@ -36,7 +36,7 @@ export default function StoreNav({ cartCount = 0 }: StoreNavProps) {
           </Link>
           <Link
             href="/projects/ecommerce/admin"
-            className="hover:text-white font-medium transition"
+              className="hover:text-slate-900 font-medium transition"
           >
             Admin
           </Link>

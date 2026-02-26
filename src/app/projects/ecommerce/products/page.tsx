@@ -2,17 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import StoreNav from "../StoreNav";
 
 type Cart = Record<string, number>;
 
 const MOCK_PRODUCTS = [
-  { id: "1", name: "Wireless Headphones", price: 89.99, image: "/projects/ecommerce.png" },
-  { id: "2", name: "Mechanical Keyboard", price: 129.99, image: "/projects/ecommerce.png" },
-  { id: "3", name: "USB-C Hub", price: 49.99, image: "/projects/ecommerce.png" },
-  { id: "4", name: "Desk Lamp", price: 39.99, image: "/projects/ecommerce.png" },
-  { id: "5", name: "Monitor Stand", price: 59.99, image: "/projects/ecommerce.png" },
-  { id: "6", name: "Webcam HD", price: 79.99, image: "/projects/ecommerce.png" },
+  { id: "1", name: "Wireless Headphones", price: 89.99, image: "/ecommerce/headphones.jpg" },
+  { id: "2", name: "Mechanical Keyboard", price: 129.99, image: "/ecommerce/keyboard.jpg" },
+  { id: "3", name: "USB-C Hub", price: 49.99, image: "/ecommerce/usb-hub.jpg" },
+  { id: "4", name: "Desk Lamp", price: 39.99, image: "/ecommerce/desk-lamp.jpg" },
+  { id: "5", name: "Monitor Stand", price: 59.99, image: "/ecommerce/monitor-stand.jpg" },
+  { id: "6", name: "Webcam HD", price: 79.99, image: "/ecommerce/headphones.jpg" },
 ];
 
 const CART_KEY = "codewithash-store-cart";
@@ -60,14 +61,16 @@ export default function EcommerceProductsPage() {
   const count = cartCount(cart);
 
   return (
-    <main className="min-h-screen bg-transparent text-white pb-16">
+    <main className="min-h-screen bg-white text-slate-900 pb-16">
       <StoreNav cartCount={count} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-        <h1 data-gsap="fade-up" className="text-2xl font-bold mb-6">
+        <h1 data-gsap="fade-up" className="text-2xl font-bold mb-2">
           Products
         </h1>
-
+        <p className="text-sm text-slate-600 mb-6">
+          Sample catalog for the CodeWithAsh demo store.
+        </p>
         {loading ? (
           <p data-gsap="fade-up" className="text-gray-400">
             Loading products...
@@ -82,16 +85,20 @@ export default function EcommerceProductsPage() {
               <li
                 key={product.id}
                 data-gsap-item
-                className="rounded-xl border border-gray-800 bg-[#0a0a0a] overflow-hidden hover:border-gray-700 transition"
+                className="rounded-xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:-translate-y-1 transition"
               >
-                <div className="aspect-square bg-gray-800/50 relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
-                    Product image
-                  </div>
+                <div className="relative aspect-square bg-slate-50">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(min-width: 1024px) 20vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-4">
-                  <h2 className="font-semibold text-white mb-1">{product.name}</h2>
-                  <p className="text-fuchsia-400 font-medium mb-3">
+                  <h2 className="font-semibold text-slate-900 mb-1">{product.name}</h2>
+                  <p className="text-fuchsia-600 font-medium mb-3">
                     ${product.price.toFixed(2)}
                   </p>
                   <div className="flex items-center gap-2">
@@ -99,11 +106,11 @@ export default function EcommerceProductsPage() {
                       type="button"
                       onClick={() => updateCart(product.id, -1)}
                       disabled={(cart[product.id] ?? 0) === 0}
-                      className="w-8 h-8 rounded-lg border border-gray-600 text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-800 transition"
+                      className="w-8 h-8 rounded-lg border border-slate-300 text-slate-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-100 transition"
                     >
                       −
                     </button>
-                    <span className="min-w-[1.5rem] text-center text-sm text-gray-300">
+                    <span className="min-w-[1.5rem] text-center text-sm text-slate-800">
                       {cart[product.id] ?? 0}
                     </span>
                     <button
@@ -113,7 +120,7 @@ export default function EcommerceProductsPage() {
                     >
                       +
                     </button>
-                    <span className="ml-2 text-xs text-gray-500">in cart</span>
+                    <span className="ml-2 text-xs text-slate-500">in cart</span>
                   </div>
                 </div>
               </li>
