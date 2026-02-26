@@ -20,6 +20,20 @@ const ALL_TECHS = [
   "React",
   "Stripe",
   "TypeScript",
+  "UI",
+  "AI",
+  // Languages
+  "JavaScript",
+  "Python",
+  "Java",
+  "C#",
+  "C++",
+  "SQL",
+  "Bash",
+  "PHP",
+  "Swift",
+  "HTML5",
+  "CSS3",
 ];
 
 type ProjectStatus = "live" | "soon";
@@ -59,7 +73,7 @@ const PROJECTS: Project[] = [
     demoUrl: "/projects/real-estate",
     codeUrl: "https://github.com/codewithash-dev/real-estate-platform",
     tags: ["React", "Node.js", "MongoDB"],
-    image: "/projects/real-estate.png",
+    image: "/projects/real-estate-new.png",
     status: "live",
   },
   {
@@ -207,7 +221,7 @@ const PROJECTS: Project[] = [
     title: "Food Delivery App",
     description: "Food delivery listing and checkout experience.",
     tags: ["React Native", "UI"],
-    image: "/projects/food-delivery-app.png",
+    image: "/projects/food-delivery-ui.png",
     status: "soon",
   },
   {

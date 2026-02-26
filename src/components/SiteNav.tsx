@@ -1,15 +1,26 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function SiteNav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/projects", label: "Projects" },
+    { href: "/learning-paths", label: "Learning" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800 min-h-14">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-14 py-2 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-14 py-2 flex items-center justify-between gap-4">
         <Link
           href="/"
-          className="btn-animate flex flex-nowrap items-center gap-3 hover:opacity-90 transition inline-flex"
+          className="btn-animate flex flex-shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition inline-flex min-w-0"
+          onClick={() => setMenuOpen(false)}
         >
           <Image
             src="/images/ashley-profile.png"
@@ -17,28 +28,70 @@ export default function SiteNav() {
             width={40}
             height={40}
             priority
-            className="w-10 h-10 rounded-full object-cover ring-2 ring-gray-700 shrink-0"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-gray-700 shrink-0"
           />
-          <span className="flex flex-col items-start justify-center shrink-0 min-w-0">
-            <span className="font-bold text-lg text-white leading-tight whitespace-nowrap">Code With Ash</span>
-            <span className="text-xs text-gray-400 font-normal leading-tight whitespace-nowrap">Build something great!</span>
+          <span className="flex flex-col items-start justify-center min-w-0">
+            <span className="font-bold text-base sm:text-lg text-white leading-tight truncate max-w-[140px] sm:max-w-none sm:whitespace-nowrap">
+              Code With Ash
+            </span>
+            <span className="text-[10px] sm:text-xs text-gray-400 font-normal leading-tight truncate max-w-[140px] sm:max-w-none sm:whitespace-nowrap">
+              Build something great!
+            </span>
           </span>
         </Link>
-        <div className="flex items-center gap-8 text-sm text-gray-300">
-          <Link href="/projects" className="btn-animate hover:text-white font-medium transition inline-block">
-            Projects
-          </Link>
-          <Link href="/learning-paths" className="btn-animate hover:text-white font-medium transition inline-block">
-            Learning
-          </Link>
-          <Link href="/services" className="btn-animate hover:text-white font-medium transition inline-block">
-            Services
-          </Link>
-          <Link href="/contact" className="btn-animate hover:text-white font-medium transition inline-block">
-            Contact
-          </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-gray-300 shrink-0">
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="btn-animate hover:text-white font-medium transition inline-block whitespace-nowrap"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile hamburger + menu */}
+        <div className="flex md:hidden items-center shrink-0">
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {menuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className="md:hidden border-t border-gray-800 bg-black/98 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="btn-animate py-3 px-2 text-gray-300 hover:text-white font-medium transition rounded-lg hover:bg-gray-800/50"
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

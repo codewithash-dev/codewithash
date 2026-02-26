@@ -106,10 +106,10 @@ export default function HomePageClient() {
   return (
     <div className="min-h-screen bg-transparent text-white">
       {/* Hero: left text + right code block (typewriter) */}
-      <section className="relative pt-28 pb-20 px-4 sm:px-6 overflow-hidden bg-transparent">
+      <section className="relative pt-24 sm:pt-28 pb-20 px-4 sm:px-6 overflow-hidden bg-transparent">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div ref={heroRef}>
-            <h1 className="hero-text text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-white">
+          <div ref={heroRef} className="min-w-0">
+            <h1 className="hero-text text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-white break-words">
               Master Coding.
               <br />
               Build Real
