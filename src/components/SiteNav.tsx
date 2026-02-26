@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function SiteNav() {
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
+    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800 min-h-14">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-14 py-2 flex items-center justify-between">
         <Link
           href="/"

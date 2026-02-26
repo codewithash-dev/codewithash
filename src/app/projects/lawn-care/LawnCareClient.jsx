@@ -26676,7 +26676,7 @@ function yS() {
   }
   , []),
   y.jsxs("nav", {
-      className: ee("fixed top-0 left-0 right-0 z-50 transition-smooth-lg", e ? "bg-background/70 backdrop-blur-2xl border-b border-border/30 py-3 glow-teal" : "bg-transparent py-6"),
+      className: ee("fixed top-14 left-0 right-0 z-40 transition-smooth-lg", e ? "bg-background/70 backdrop-blur-2xl border-b border-border/30 py-3 glow-teal" : "bg-transparent py-6"),
       children: [y.jsxs("div", {
           className: "container mx-auto px-4 flex items-center justify-between",
           children: [y.jsxs(xf, {
@@ -26988,7 +26988,7 @@ function gS() {
       })
   })
 }
-const k3 = "/assets/professional_landscaper_using_a_tablet_with_a_digital_dashboard_overlay_in_a_garden.-_sat0XWC.png";
+const k3 = "/lawn-care/assets/images/professional_landscaper.png";
 function P3() {
   const {branding: e} = Hl();
   return y.jsxs("section", {
@@ -27191,9 +27191,9 @@ function ji({className: e, variant: i, ...s}) {
       ...s
   })
 }
-const q3 = "/assets/lawn_care_cutting_demonstration-DzjaDPWR.mp4"
-, G3 = "/assets/landscape_design_transformation-DJnfG4C3.mp4"
-, Y3 = "/assets/completed_landscape_project_showcase-BuvRPZkC.mp4"
+const q3 = "/lawn-care/assets/videos/lawn_care_cutting_demonstration.mp4"
+, G3 = "/lawn-care/assets/videos/landscape_design_transformation.mp4"
+, Y3 = "/lawn-care/assets/videos/completed_landscape_project_showcase.mp4"
 , X3 = [{
   id: 1,
   title: "Professional Lawn Cutting",
@@ -27344,8 +27344,8 @@ function Q3() {
       })]
   })
 }
-const K3 = "/assets/isometric_map_visualization_of_optimized_lawn_care_routes.-BVcMTEnU.png"
-, Z3 = "/assets/satellite_view_of_a_property_with_ai_measurement_overlays.-DPYxeAxk.png"
+const K3 = "/lawn-care/assets/images/isometric_map_visualization.png"
+, Z3 = "/lawn-care/assets/images/satellite_view.png"
 , $3 = [{
   id: "crm",
   title: "LawnCRM Core",
@@ -27932,7 +27932,7 @@ function i5() {
       })
   })
 }
-const a5 = "/assets/modern_saas_dashboard_on_a_monitor_in_a_workspace.-CSJMTh9b.png";
+const a5 = "/lawn-care/assets/images/modern_saas_dashboard.png";
 function s5() {
   return y.jsx("section", {
       className: "py-24 bg-slate-950 overflow-hidden",
@@ -28707,13 +28707,20 @@ function y5() {
   })
 }
 function g5() {
+  const routerBase = typeof window !== "undefined" && window.location.pathname.startsWith("/projects/lawn-care") ? "/projects/lawn-care" : "";
   return y.jsx(QM, {
       children: y.jsx(F2, {
           client: Z2,
           children: y.jsxs(XM, {
-              children: [y.jsx(LA, {}), y.jsx(y5, {})]
+              children: [y.jsx(LA, {}), routerBase ? y.jsx(b2, { base: routerBase, children: y.jsx(y5, {}) }) : y.jsx(y5, {})]
           })
       })
   })
 }
-IT.createRoot(document.getElementById("root")).render(y.jsx(g5, {}));
+function mount() {
+  if (typeof document !== "undefined") {
+    const el = document.getElementById("root");
+    if (el && !el.hasChildNodes()) IT.createRoot(el).render(y.jsx(g5, {}));
+  }
+}
+export { g5 as default, mount };

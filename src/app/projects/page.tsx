@@ -92,7 +92,7 @@ const PROJECTS: Project[] = [
   {
     title: "Lawn Care Style Portfolio",
     description: "Marketing-style portfolio for a lawn care business with modern UI.",
-    demoUrl: "https://codewithash.com/projects/lawn-care",
+    demoUrl: "/projects/lawn-care",
     codeUrl: undefined,
     tags: ["Next.js", "Tailwind"],
     image: "/projects/lawn-care.png",
