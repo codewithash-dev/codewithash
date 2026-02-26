@@ -46,17 +46,13 @@ export default function EcommerceProjectPage() {
         >
           <Link
             href="/projects/ecommerce/products"
-            className="btn-animate inline-flex items-center justify-center gradient-cta text-white px-6 py-3 rounded-lg font-semibold"
+            className="btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-black text-white hover:bg-neutral-900 transition"
           >
             View Store
           </Link>
           <Link
             href="/projects/ecommerce/admin"
-            className="btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold"
-            style={{
-              background: "linear-gradient(to right, #5b21b6, #a21caf)",
-              color: "#ffffff",
-            }}
+            className="btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-black text-white hover:bg-neutral-900 transition"
           >
             Admin Panel
           </Link>
@@ -64,11 +60,7 @@ export default function EcommerceProjectPage() {
             href="https://github.com/codewithash-dev/ecommerce"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold"
-            style={{
-              background: "linear-gradient(to right, #5b21b6, #a21caf)",
-              color: "#ffffff",
-            }}
+            className="btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-black text-white hover:bg-neutral-900 transition"
           >
             View code
           </a>

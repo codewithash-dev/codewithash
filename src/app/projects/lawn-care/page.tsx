@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const METRICS = [
   { label: "Integrated Suite", value: "6-in-1" },
@@ -91,60 +92,82 @@ const PRICING = [
 ];
 
 const RESOURCES = [
+  { title: "Video Tutorials", description: "Step-by-step guides to get you up and running with each Lawn Care OS module." },
+  { title: "Documentation", description: "Complete API docs and integration guides for connecting to your existing stack." },
+  { title: "Community Forum", description: "Connect with other landscapers, share playbooks, and learn what's working." },
+  { title: "Live Webinars", description: "Weekly training sessions with product experts and industry leaders." },
+  { title: "Case Studies", description: "Real-world success stories from crews that scaled with Lawn Care OS." },
+  { title: "Support Center", description: "24/7 customer support so you're never stuck on the job." },
+];
+
+const FEATURED_WORK = [
   {
-    title: "Video Tutorials",
-    description:
-      "Step-by-step guides to get you up and running with each Lawn Care OS module.",
+    title: "Cutting Service",
+    subtitle: "Professional Lawn Cutting",
+    detail: "Zero-Turn Efficiency",
+    body: "Precision mowing with perfect stripe patterns.",
+    image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&h=400&fit=crop",
   },
   {
-    title: "Documentation",
-    description:
-      "Complete API docs and integration guides for connecting to your existing stack.",
+    title: "Design & Build",
+    subtitle: "Landscape Design",
+    detail: "Complete Transformation",
+    body: "Beautiful before-and-after garden installations.",
+    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&h=400&fit=crop",
   },
   {
-    title: "Community Forum",
-    description:
-      "Connect with other landscapers, share playbooks, and learn what's working.",
-  },
-  {
-    title: "Live Webinars",
-    description:
-      "Weekly training sessions with product experts and industry leaders.",
-  },
-  {
-    title: "Case Studies",
-    description:
-      "Real-world success stories from crews that scaled with Lawn Care OS.",
-  },
-  {
-    title: "Support Center",
-    description: "24/7 customer support so you're never stuck on the job.",
+    title: "Portfolio",
+    subtitle: "Premium Project",
+    detail: "Golden Hour Beauty",
+    body: "Finished landscapes with professional lighting and edges.",
+    image: "https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600&h=400&fit=crop",
   },
 ];
 
+const HERO_IMAGE = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop";
+const DASHBOARD_IMAGE = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop";
+
 export default function LawnCareProjectPage() {
   return (
-    <main className="min-h-screen bg-black text-white pt-24 pb-24 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto space-y-24">
-        {/* Hero */}
-        <section className="grid lg:grid-cols-[1.2fr,1fr] gap-12 items-center">
+    <div className="min-h-screen bg-white text-slate-900">
+      {/* Top bar / back */}
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+          <Link
+            href="/projects"
+            className="text-sm text-slate-600 hover:text-emerald-600 transition font-medium"
+          >
+            ← Back to Projects
+          </Link>
+          <span className="text-sm font-semibold text-emerald-600">Lawn Care OS</span>
+        </div>
+      </header>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-24">
+        {/* Hero: two-column, white bg, green accent */}
+        <section className="pt-12 lg:pt-16 grid lg:grid-cols-[1.2fr,1fr] gap-12 items-center">
           <div>
-            <p className="text-xs sm:text-sm font-semibold text-green-400 uppercase tracking-[0.25em] mb-3">
+            <p className="text-xs sm:text-sm font-semibold text-emerald-600 uppercase tracking-[0.2em] mb-3">
               Rated #1 Software for Landscaping Businesses
             </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-              Welcome to <span className="text-green-400">Lawn Care OS</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">
+              Welcome to <span className="text-emerald-600">Lawn Care OS</span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-300 max-w-xl mb-8">
-              Built as a flagship product by Code With Ash. Replace the chaos of
-              texts, notebooks, and spreadsheets with one powerful platform
+            <p className="text-base sm:text-lg text-slate-600 max-w-xl mb-8">
+              Replace the chaos of texts, notebooks, and spreadsheets with one powerful platform
               optimized for scheduling, routing, quoting, and getting paid.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
-              <button className="btn-animate inline-flex items-center justify-center rounded-xl bg-green-500 px-6 py-3 font-semibold text-black hover:bg-green-400 transition">
+              <button
+                type="button"
+                className="btn-animate inline-flex items-center justify-center rounded-xl bg-emerald-600 text-white px-6 py-3 font-semibold hover:bg-emerald-500 transition"
+              >
                 Start Free Trial
               </button>
-              <button className="btn-animate inline-flex items-center justify-center rounded-xl border border-gray-600 px-6 py-3 font-semibold text-white hover:bg-white hover:text-black transition">
+              <button
+                type="button"
+                className="btn-animate inline-flex items-center justify-center rounded-xl border-2 border-slate-300 text-slate-700 px-6 py-3 font-semibold hover:border-slate-400 hover:bg-slate-50 transition"
+              >
                 Watch Demo
               </button>
             </div>
@@ -152,137 +175,126 @@ export default function LawnCareProjectPage() {
               {METRICS.map((m) => (
                 <div
                   key={m.label}
-                  className="rounded-xl border border-gray-800 bg-[#020617] px-4 py-3 text-left"
+                  className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left"
                 >
-                  <p className="text-sm font-semibold text-white">{m.value}</p>
-                  <p className="text-xs text-gray-400">{m.label}</p>
+                  <p className="text-sm font-bold text-slate-900">{m.value}</p>
+                  <p className="text-xs text-slate-500">{m.label}</p>
                 </div>
               ))}
             </div>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 via-emerald-500/10 to-transparent blur-3xl rounded-3xl" />
-            <div className="relative rounded-3xl border border-green-500/30 bg-gradient-to-br from-[#020617] via-[#020617] to-black p-6 shadow-[0_18px_50px_rgba(22,163,74,0.45)]">
-              <p className="text-xs font-semibold text-green-300 uppercase tracking-[0.25em] mb-3">
-                Command Center
-              </p>
-              <h2 className="text-xl font-bold mb-4">
-                Live schedule, crews, and cashflow at a glance.
-              </h2>
-              <ul className="space-y-2 text-sm text-gray-300 mb-4">
-                <li>• Live GPS crew tracking</li>
-                <li>• Drag-and-drop dispatch board</li>
-                <li>• Real-time revenue and receivables</li>
-                <li>• Pending quote approvals in one view</li>
-              </ul>
-              <div className="grid grid-cols-2 gap-3 text-xs">
-                <div className="rounded-xl bg-black/50 p-3 border border-gray-800">
-                  <p className="text-green-400 font-semibold mb-1">
-                    Today&apos;s Routes
-                  </p>
-                  <p className="text-gray-400">12 crews · 86 stops</p>
-                </div>
-                <div className="rounded-xl bg-black/50 p-3 border border-gray-800">
-                  <p className="text-green-400 font-semibold mb-1">
-                    Payments Collected
-                  </p>
-                  <p className="text-gray-400">$18,240 · 92%</p>
-                </div>
-              </div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-3xl blur-2xl opacity-60" />
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl aspect-[4/3]">
+              <Image
+                src={HERO_IMAGE}
+                alt="Lawn care professional at work"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* Featured Work */}
+        {/* Metrics strip: full-width light green */}
+        <section className="my-16 lg:my-24 rounded-2xl bg-emerald-50 border border-emerald-100 py-8 px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-emerald-700">6-in-1</p>
+              <p className="text-sm text-emerald-800/80 mt-1">Integrated Suite</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-emerald-700">40%</p>
+              <p className="text-sm text-emerald-800/80 mt-1">More Revenue</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-emerald-700">20hrs</p>
+              <p className="text-sm text-emerald-800/80 mt-1">Saved Weekly</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Work: cards with images */}
         <section className="space-y-8">
           <header className="flex flex-col gap-2">
-            <p className="text-xs sm:text-sm font-semibold text-green-400 uppercase tracking-[0.25em]">
+            <p className="text-xs sm:text-sm font-semibold text-emerald-600 uppercase tracking-[0.2em]">
               Featured Work
             </p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
                   Premium Lawn Care Portfolio
                 </h2>
-                <p className="text-sm sm:text-base text-gray-300 max-w-2xl">
-                  Watch Lawn Care OS in action. Each project showcases precision,
-                  attention to detail, and professional execution.
+                <p className="text-sm sm:text-base text-slate-600 max-w-2xl mt-1">
+                  Watch Lawn Care OS in action. Each project showcases precision and professional execution.
                 </p>
               </div>
-              <Link
+              <a
                 href="#pricing"
-                className="btn-animate inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-2 text-xs sm:text-sm text-gray-200 hover:bg-white hover:text-black transition"
+                className="btn-animate inline-flex items-center justify-center rounded-lg border-2 border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
               >
                 View complete portfolio →
-              </Link>
+              </a>
             </div>
           </header>
-
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Cutting Service",
-                subtitle: "Professional Lawn Cutting",
-                detail: "Zero-Turn Efficiency",
-                body: "Precision mowing with perfect stripe patterns.",
-              },
-              {
-                title: "Design & Build",
-                subtitle: "Landscape Design",
-                detail: "Complete Transformation",
-                body: "Beautiful before-and-after garden installations.",
-              },
-              {
-                title: "Portfolio",
-                subtitle: "Premium Project",
-                detail: "Golden Hour Beauty",
-                body: "Finished landscapes with professional lighting and edges.",
-              },
-            ].map((card) => (
+            {FEATURED_WORK.map((card) => (
               <article
                 key={card.title}
-                className="relative overflow-hidden rounded-2xl border border-gray-800 bg-gradient-to-br from-[#020617] via-[#020617] to-black p-5"
+                className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition"
               >
-                <div className="mb-4 text-xs font-semibold uppercase tracking-wide text-green-400">
-                  {card.title}
+                <div className="relative aspect-[4/3] bg-slate-100">
+                  <Image
+                    src={card.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold mb-1">{card.subtitle}</h3>
-                <p className="text-sm text-green-300 mb-2">{card.detail}</p>
-                <p className="text-sm text-gray-300">{card.body}</p>
+                <div className="p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-emerald-600">
+                    {card.title}
+                  </p>
+                  <h3 className="text-lg font-semibold text-slate-900 mt-1">{card.subtitle}</h3>
+                  <p className="text-sm text-emerald-700 font-medium mt-0.5">{card.detail}</p>
+                  <p className="text-sm text-slate-600 mt-2">{card.body}</p>
+                </div>
               </article>
             ))}
           </div>
         </section>
 
         {/* Modules */}
-        <section className="space-y-8">
+        <section className="pt-16 lg:pt-24 space-y-8">
           <header className="text-center max-w-3xl mx-auto">
-            <p className="text-xs sm:text-sm font-semibold text-green-400 uppercase tracking-[0.25em] mb-3">
+            <p className="text-xs sm:text-sm font-semibold text-emerald-600 uppercase tracking-[0.2em] mb-3">
               The Full Stack
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
               Six powerful modules. One integrated platform.
             </h2>
-            <p className="text-sm sm:text-base text-gray-300">
-              Each module is powerful on its own, but together they become the
-              ultimate Lawn Care OS.
+            <p className="text-sm sm:text-base text-slate-600">
+              Each module is powerful on its own, but together they become the ultimate Lawn Care OS.
             </p>
           </header>
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {MODULES.map((mod) => (
               <article
                 key={mod.name}
-                className="rounded-2xl border border-gray-800 bg-[#020617] p-5 flex flex-col justify-between hover:border-green-500/70 transition"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-emerald-300 hover:shadow-md transition"
               >
-                <div>
-                  <p className="text-xs font-semibold text-green-300 uppercase tracking-wide mb-2">
-                    {mod.badge}
-                  </p>
-                  <h3 className="text-lg font-semibold mb-2">{mod.name}</h3>
-                  <p className="text-sm text-gray-300">{mod.description}</p>
-                </div>
-                <button className="mt-4 inline-flex text-xs text-green-300 hover:text-green-200 underline underline-offset-4">
+                <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-2">
+                  {mod.badge}
+                </p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{mod.name}</h3>
+                <p className="text-sm text-slate-600">{mod.description}</p>
+                <button
+                  type="button"
+                  className="mt-4 text-sm font-medium text-emerald-600 hover:text-emerald-700 underline underline-offset-4"
+                >
                   Learn more
                 </button>
               </article>
@@ -290,97 +302,93 @@ export default function LawnCareProjectPage() {
           </div>
         </section>
 
-        {/* Dashboard highlight */}
-        <section className="grid lg:grid-cols-2 gap-10 items-center">
+        {/* Dashboard highlight: two-column, image right */}
+        <section className="pt-16 lg:pt-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
               Control your entire operation from one screen.
             </h2>
-            <p className="text-sm sm:text-base text-gray-300 mb-5">
-              Real-time crew tracking, instant drag-and-drop scheduling, and
-              financial health at a glance. The Dashboard is your command
-              center.
+            <p className="text-slate-600 mb-5">
+              Real-time crew tracking, instant drag-and-drop scheduling, and financial health at a glance.
+              The Dashboard is your command center.
             </p>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>• Live GPS crew tracking</li>
-              <li>• Drag &amp; drop dispatch board</li>
-              <li>• Financial health pulse</li>
-              <li>• Pending quote approvals in one view</li>
+            <ul className="space-y-2 text-slate-600">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Live GPS crew tracking
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Drag & drop dispatch board
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Financial health pulse
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Pending quote approvals in one view
+              </li>
             </ul>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent blur-3xl rounded-3xl" />
-            <div className="relative rounded-3xl border border-gray-800 bg-[#020617] p-6 flex flex-col gap-4">
-              <div className="flex justify-between items-center">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-[0.2em]">
-                  Today&apos;s Overview
-                </p>
-                <span className="rounded-full bg-green-500/10 px-3 py-1 text-[11px] text-green-300">
-                  Live
-                </span>
-              </div>
-              <div className="grid grid-cols-3 gap-3 text-xs">
-                <div className="rounded-xl border border-gray-800 bg-black/40 p-3">
-                  <p className="text-gray-400">Active Crews</p>
-                  <p className="text-lg font-semibold text-white">12</p>
-                </div>
-                <div className="rounded-xl border border-gray-800 bg-black/40 p-3">
-                  <p className="text-gray-400">Stops Today</p>
-                  <p className="text-lg font-semibold text-white">86</p>
-                </div>
-                <div className="rounded-xl border border-gray-800 bg-black/40 p-3">
-                  <p className="text-gray-400">On-Time</p>
-                  <p className="text-lg font-semibold text-white">97%</p>
-                </div>
-              </div>
-              <div className="rounded-xl border border-gray-800 bg-black/40 p-4 text-xs text-gray-300">
-                <p className="font-semibold text-white mb-1">
-                  Financial Health Pulse
-                </p>
-                <p>Today: $18,240 collected · 11 invoices overdue</p>
-              </div>
+            <div className="absolute -inset-4 bg-emerald-50 rounded-2xl blur-xl opacity-50" />
+            <div className="relative rounded-2xl border border-slate-200 overflow-hidden shadow-lg aspect-video">
+              <Image
+                src={DASHBOARD_IMAGE}
+                alt="Dashboard overview"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="space-y-8">
+        <section id="pricing" className="pt-16 lg:pt-24 space-y-8">
           <header className="text-center max-w-3xl mx-auto">
-            <p className="text-xs sm:text-sm font-semibold text-green-400 uppercase tracking-[0.25em] mb-3">
+            <p className="text-xs sm:text-sm font-semibold text-emerald-600 uppercase tracking-[0.2em] mb-3">
               Simple Pricing
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
               Simple, transparent pricing
             </h2>
-            <p className="text-sm sm:text-base text-gray-300">
-              Choose the plan that fits your business stage. Upgrade as you
-              grow.
+            <p className="text-sm sm:text-base text-slate-600">
+              Choose the plan that fits your business stage. Upgrade as you grow.
             </p>
           </header>
           <div className="grid md:grid-cols-3 gap-6">
             {PRICING.map((tier) => (
               <article
                 key={tier.name}
-                className={`rounded-2xl border bg-[#020617] p-6 flex flex-col ${
+                className={`rounded-2xl border-2 p-6 flex flex-col ${
                   tier.featured
-                    ? "border-green-500 shadow-[0_18px_60px_rgba(22,163,74,0.55)]"
-                    : "border-gray-800"
+                    ? "border-emerald-500 bg-emerald-50/50 shadow-lg shadow-emerald-500/10"
+                    : "border-slate-200 bg-white"
                 }`}
               >
                 {tier.featured && (
-                  <span className="mb-3 inline-flex self-start rounded-full bg-green-600/20 px-3 py-1 text-[11px] font-semibold text-green-300">
+                  <span className="mb-3 inline-flex self-start rounded-full bg-emerald-600 text-white px-3 py-1 text-xs font-semibold">
                     Most Popular
                   </span>
                 )}
-                <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
-                <p className="text-sm text-gray-300 mb-3">{tier.highlight}</p>
-                <p className="text-2xl font-bold mb-4">{tier.price}</p>
-                <ul className="mb-6 space-y-2 text-sm text-gray-300">
+                <h3 className="text-lg font-semibold text-slate-900">{tier.name}</h3>
+                <p className="text-sm text-slate-600 mb-3">{tier.highlight}</p>
+                <p className="text-2xl font-bold text-slate-900 mb-4">{tier.price}</p>
+                <ul className="mb-6 space-y-2 text-sm text-slate-600">
                   {tier.items.map((item) => (
                     <li key={item}>• {item}</li>
                   ))}
                 </ul>
-                <button className="mt-auto btn-animate inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-gray-100 transition">
+                <button
+                  type="button"
+                  className={`mt-auto btn-animate inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+                    tier.featured
+                      ? "bg-emerald-600 text-white hover:bg-emerald-500"
+                      : "bg-slate-900 text-white hover:bg-slate-800"
+                  }`}
+                >
                   {tier.cta}
                 </button>
               </article>
@@ -389,107 +397,89 @@ export default function LawnCareProjectPage() {
         </section>
 
         {/* Resources */}
-        <section className="space-y-8">
+        <section className="pt-16 lg:pt-24 space-y-8">
           <header className="text-center max-w-3xl mx-auto">
-            <p className="text-xs sm:text-sm font-semibold text-green-400 uppercase tracking-[0.25em] mb-3">
-              Learn &amp; Support
+            <p className="text-xs sm:text-sm font-semibold text-emerald-600 uppercase tracking-[0.2em] mb-3">
+              Learn & Support
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
               Resources to help you succeed
             </h2>
-            <p className="text-sm sm:text-base text-gray-300">
-              From training materials to customer support, Lawn Care OS has
-              everything you need to master the platform.
+            <p className="text-sm sm:text-base text-slate-600">
+              From training materials to customer support, Lawn Care OS has everything you need.
             </p>
           </header>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {RESOURCES.map((r) => (
               <article
                 key={r.title}
-                className="rounded-2xl border border-gray-800 bg-[#020617] p-5"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-emerald-200 transition"
               >
-                <h3 className="text-base font-semibold mb-2">{r.title}</h3>
-                <p className="text-sm text-gray-300">{r.description}</p>
+                <h3 className="text-base font-semibold text-slate-900 mb-2">{r.title}</h3>
+                <p className="text-sm text-slate-600">{r.description}</p>
               </article>
             ))}
           </div>
-          <p className="text-center text-sm text-gray-300">
+          <p className="text-center text-sm text-slate-600">
             Have more questions?{" "}
-            <Link
-              href="/contact"
-              className="text-green-300 hover:text-green-200 underline underline-offset-4"
-            >
+            <Link href="/contact" className="text-emerald-600 hover:text-emerald-700 font-medium underline underline-offset-4">
               Contact our team
             </Link>
             .
           </p>
         </section>
 
-        {/* Enterprise */}
-        <section className="space-y-8">
-          <div className="rounded-3xl border border-green-500/40 bg-gradient-to-br from-green-600/30 via-black to-black p-8 md:p-10">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        {/* Enterprise CTA: green gradient */}
+        <section className="pt-16 lg:pt-24">
+          <div className="rounded-3xl bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 text-white p-8 md:p-12 shadow-xl">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
               <div className="max-w-xl">
-                <p className="text-xs sm:text-sm font-semibold text-green-200 uppercase tracking-[0.25em] mb-3">
+                <p className="text-xs sm:text-sm font-semibold text-emerald-200 uppercase tracking-[0.2em] mb-3">
                   For Large Teams
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-bold mb-3">
                   Enterprise Solutions
                 </h2>
-                <p className="text-sm sm:text-base text-green-50 mb-5">
-                  Built for multi-location operations, large teams, and complex
-                  business requirements.
+                <p className="text-emerald-50 mb-5">
+                  Built for multi-location operations, large teams, and complex business requirements.
                 </p>
                 <h3 className="text-lg font-semibold mb-1">Business Elite</h3>
-                <p className="text-sm text-green-100 mb-4">
-                  Custom pricing with unlimited everything, dedicated support,
-                  and advanced security.
+                <p className="text-emerald-100 text-sm mb-4">
+                  Custom pricing with unlimited everything, dedicated support, and advanced security.
                 </p>
-                <ul className="space-y-2 text-sm text-green-100">
-                  <li>• Unlimited team members &amp; locations</li>
+                <ul className="space-y-2 text-sm text-emerald-100">
+                  <li>• Unlimited team members & locations</li>
                   <li>• Advanced analytics and profitability insights</li>
                   <li>• SSO, granular permissions, and audit logs</li>
                   <li>• Custom integrations and white-label options</li>
                 </ul>
-                <button className="mt-6 btn-animate inline-flex items-center justify-center rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black hover:bg-gray-100 transition">
+                <button
+                  type="button"
+                  className="mt-6 btn-animate inline-flex items-center justify-center rounded-xl bg-white text-emerald-800 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-50 transition"
+                >
                   Schedule Demo
                 </button>
               </div>
-              <div className="space-y-4 text-sm text-green-100 min-w-[220px]">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-xl bg-black/40 p-3 border border-green-500/40">
-                    <p className="text-xs text-green-200">Fortune</p>
-                    <p className="text-xl font-bold">500</p>
+              <div className="grid grid-cols-2 gap-3 max-w-xs">
+                {[
+                  { label: "Fortune", value: "500" },
+                  { label: "Locations", value: "100+" },
+                  { label: "Customers", value: "2M+" },
+                  { label: "Revenue", value: "$50M+" },
+                ].map(({ label, value }) => (
+                  <div
+                    key={label}
+                    className="rounded-xl bg-white/10 backdrop-blur p-3 border border-white/20"
+                  >
+                    <p className="text-xs text-emerald-200">{label}</p>
+                    <p className="text-xl font-bold">{value}</p>
                   </div>
-                  <div className="rounded-xl bg-black/40 p-3 border border-green-500/40">
-                    <p className="text-xs text-green-200">Locations</p>
-                    <p className="text-xl font-bold">100+</p>
-                  </div>
-                  <div className="rounded-xl bg-black/40 p-3 border border-green-500/40">
-                    <p className="text-xs text-green-200">Customers</p>
-                    <p className="text-xl font-bold">2M+</p>
-                  </div>
-                  <div className="rounded-xl bg-black/40 p-3 border border-green-500/40">
-                    <p className="text-xs text-green-200">Revenue</p>
-                    <p className="text-xl font-bold">$50M+</p>
-                  </div>
-                </div>
-                <div className="rounded-xl bg-black/40 p-4 border border-green-500/40">
-                  <p className="text-xs text-green-200 mb-1">
-                    &quot;Lawn Care OS transformed how we manage 50+ crews
-                    across 3 states. The white-label solution let us rebrand it
-                    for our franchise partners.&quot;
-                  </p>
-                  <p className="text-xs font-semibold mt-2">John Davidson</p>
-                  <p className="text-[11px] text-green-200">
-                    CEO, National Landscaping Group
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

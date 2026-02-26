@@ -47,7 +47,7 @@ const PROJECTS: Project[] = [
   {
     title: "Full Stack Social Media App",
     description: "Instagram-style social app with posts, likes, comments, and profiles.",
-    demoUrl: "https://codewithash.com/projects/social-media",
+    demoUrl: "/projects/social-media/feed",
     codeUrl: "https://github.com/codewithash-dev/social-media-app",
     tags: ["Next.js", "Supabase", "Tailwind", "Expo"],
     image: "/projects/social-media.png",
