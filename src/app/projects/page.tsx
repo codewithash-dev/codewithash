@@ -56,7 +56,7 @@ const PROJECTS: Project[] = [
   {
     title: "Real Estate Platform",
     description: "Real estate listings with filters, search, and property details.",
-    demoUrl: "https://codewithash.com/projects/real-estate",
+    demoUrl: "/projects/real-estate",
     codeUrl: "https://github.com/codewithash-dev/real-estate-platform",
     tags: ["React", "Node.js", "MongoDB"],
     image: "/projects/real-estate.png",
@@ -74,7 +74,7 @@ const PROJECTS: Project[] = [
   {
     title: "Login Credentials System",
     description: "Secure credential vault with categories, notes, and Supabase auth.",
-    demoUrl: "https://snack.expo.dev/@codewithash-dev/login-credentials?platform=web&preview=true",
+    demoUrl: "/projects/login-credentials",
     codeUrl: "https://github.com/codewithash-dev/login-credentials",
     tags: ["React Native", "Expo", "Supabase", "TypeScript"],
     image: "/projects/login-credentials.png",
