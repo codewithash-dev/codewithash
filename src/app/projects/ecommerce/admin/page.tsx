@@ -5,7 +5,7 @@ import StoreNav from "../StoreNav";
 
 export default function EcommerceAdminPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 pb-16">
+    <main className="ecommerce-project min-h-screen bg-white text-slate-900 pb-16">
       <StoreNav cartCount={0} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
@@ -13,7 +13,7 @@ export default function EcommerceAdminPage() {
           Admin Panel
         </h1>
         <p data-gsap="fade-up" className="text-slate-600 mb-8">
-          Manage products, inventory, and orders for CodeWithAsh Store.
+          Manage products, inventory, and orders for CodeWithAsh Shop.
         </p>
 
         <div
@@ -30,7 +30,8 @@ export default function EcommerceAdminPage() {
             </p>
             <button
               type="button"
-              className="btn-animate px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition text-sm"
+              className="ecommerce-cta btn-animate px-4 py-2 rounded-lg transition text-sm"
+              style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
             >
               Manage products
             </button>
@@ -45,7 +46,8 @@ export default function EcommerceAdminPage() {
             </p>
             <button
               type="button"
-              className="btn-animate px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition text-sm"
+              className="ecommerce-cta btn-animate px-4 py-2 rounded-lg transition text-sm"
+              style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
             >
               View orders
             </button>
@@ -60,7 +62,8 @@ export default function EcommerceAdminPage() {
             </p>
             <button
               type="button"
-              className="btn-animate px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition text-sm"
+              className="ecommerce-cta btn-animate px-4 py-2 rounded-lg transition text-sm"
+              style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
             >
               Update inventory
             </button>
@@ -70,7 +73,8 @@ export default function EcommerceAdminPage() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/projects/ecommerce/products"
-            className="btn-animate inline-flex items-center justify-center gradient-cta text-white px-6 py-3 rounded-lg font-semibold"
+            className="ecommerce-cta btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition hover:opacity-90"
+            style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
           >
             View Store
           </Link>

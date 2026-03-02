@@ -63,7 +63,7 @@ export default function EcommerceCartPage() {
   );
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 pb-16">
+    <main className="ecommerce-project min-h-screen bg-white text-slate-900 pb-16">
       <StoreNav cartCount={count} />
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
@@ -99,7 +99,8 @@ export default function EcommerceCartPage() {
                     <button
                       type="button"
                       onClick={() => updateCart(id, -1)}
-                      className="w-8 h-8 rounded border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
+                      className="ecommerce-cta btn-animate w-8 h-8 rounded transition"
+                      style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
                     >
                       −
                     </button>
@@ -107,7 +108,8 @@ export default function EcommerceCartPage() {
                     <button
                       type="button"
                       onClick={() => updateCart(id, 1)}
-                      className="btn-animate w-8 h-8 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-500 transition"
+                      className="ecommerce-cta btn-animate w-8 h-8 rounded transition"
+                      style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
                     >
                       +
                     </button>
@@ -129,7 +131,8 @@ export default function EcommerceCartPage() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/projects/ecommerce/products"
-            className="btn-animate inline-flex items-center justify-center gradient-cta text-white px-6 py-3 rounded-lg font-semibold"
+            className="ecommerce-cta btn-animate inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition hover:opacity-90"
+            style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}
           >
             Continue shopping
           </Link>

@@ -85,3 +85,19 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* E-commerce: NUCLEAR — force every .ecommerce-cta to black; overrides gradient-cta and any other rule */
+.ecommerce-cta,
+.ecommerce-cta:hover,
+.ecommerce-cta:focus,
+.ecommerce-cta:active,
+main.ecommerce-project .ecommerce-cta,
+main.ecommerce-project .ecommerce-cta:hover,
+main.ecommerce-project .ecommerce-cta:focus,
+main.ecommerce-project .ecommerce-cta:active,
+main.ecommerce-project button.ecommerce-cta,
+main.ecommerce-project a.ecommerce-cta {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}

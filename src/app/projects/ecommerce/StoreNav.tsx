@@ -14,7 +14,7 @@ export default function StoreNav({ cartCount = 0 }: StoreNavProps) {
           href="/projects/ecommerce/products"
           className="font-semibold text-slate-900 hover:text-slate-700 transition"
         >
-          CodeWithAsh Store
+          CodeWithAsh Shop
         </Link>
         <nav className="flex items-center gap-6 text-sm text-slate-600">
           <Link
@@ -29,7 +29,7 @@ export default function StoreNav({ cartCount = 0 }: StoreNavProps) {
           >
             Cart
             {cartCount > 0 && (
-              <span className="bg-fuchsia-500 text-white text-xs font-bold rounded-full min-w-[1.25rem] h-5 px-1.5 flex items-center justify-center">
+              <span className="ecommerce-cta text-xs font-bold rounded-full min-w-[1.25rem] h-5 px-1.5 flex items-center justify-center" style={{ backgroundColor: "#000", color: "#fff", backgroundImage: "none" }}>
                 {cartCount}
               </span>
             )}
