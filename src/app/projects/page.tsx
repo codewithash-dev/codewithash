@@ -107,7 +107,7 @@ const PROJECTS: Project[] = [
   {
     title: "URL Shortener Mobile App",
     description: "Shorten and manage links with a clean, mobile-first UI.",
-    demoUrl: "https://github.com/codewithash-dev/url-shortener",
+    demoUrl: "/projects/url-shortener/mobile-app",
     codeUrl: "https://github.com/codewithash-dev/url-shortener",
     tags: ["React Native", "Expo", "Tailwind"],
     image: "/projects/url-shortener.png",
