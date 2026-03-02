@@ -77,6 +77,16 @@ const PROJECTS: Project[] = [
     status: "live",
   },
   {
+    title: "EcoSphere360 Sustainability Grid",
+    description:
+      "Cinematic sustainability intelligence platform with real-time environmental data, compliance tools, and farm readiness monitoring.",
+    demoUrl: "/projects/ecosphere-360",
+    codeUrl: "https://github.com/codewithash-dev/ecosphere-360",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "AI"],
+    image: "/mascot-icon.png",
+    status: "live",
+  },
+  {
     title: "Fitness App",
     description: "Workout tracking app with programs, exercises, and progress UI.",
     demoUrl: "https://fitforge-expo.vercel.app",
@@ -344,15 +354,17 @@ export default function ProjectsPage() {
                           <span>▶</span>
                           <span>Demo</span>
                         </Link>
-                        <Link
-                          href={project.codeUrl ?? "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-animate inline-flex items-center gap-1 hover:text-fuchsia-300 transition-transform"
-                        >
-                          <span>{"</>"}</span>
-                          <span>Code</span>
-                        </Link>
+                        {project.codeUrl && (
+                          <Link
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-animate inline-flex items-center gap-1 hover:text-fuchsia-300 transition-transform"
+                          >
+                            <span>{"</>"}</span>
+                            <span>Code</span>
+                          </Link>
+                        )}
                       </div>
                     </>
                   ) : (

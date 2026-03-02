@@ -45,6 +45,36 @@
   transform: scale(0.98);
 }
 
+/* EcoSphere360 entrance animations */
+@keyframes ecosphere-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ecosphere-fade-up {
+  opacity: 0;
+  animation-name: ecosphere-fade-up;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* SAT-LINK scan bar: vertical up-down motion */
+@keyframes satlink-scan {
+  0%, 100% { top: 0; }
+  50% { top: calc(100% - 0.125rem); }
+}
+
+.animate-satlink-scan {
+  animation: satlink-scan 2.5s ease-in-out infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
