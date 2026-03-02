@@ -252,7 +252,7 @@ const PROJECTS: Project[] = [
     title: "Youtube Clone",
     description: "YouTube-style video feed with shorts and navigation.",
     tags: ["React Native", "UI"],
-    image: "/projects/url-shortener.png",
+    image: "/projects/youtube-clone.png",
     status: "soon",
   },
 ];

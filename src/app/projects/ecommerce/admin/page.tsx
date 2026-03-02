@@ -1,19 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import StoreNav from "../StoreNav";
 
 export default function EcommerceAdminPage() {
   return (
     <main className="ecommerce-project min-h-screen bg-white text-slate-900 pb-16">
-      <StoreNav cartCount={0} />
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+        <nav className="flex gap-4 text-sm text-slate-600 mb-6">
+          <Link href="/projects/ecommerce/products" className="hover:text-slate-900">Products</Link>
+          <Link href="/projects/ecommerce/cart" className="hover:text-slate-900">Cart</Link>
+          <Link href="/projects/ecommerce/admin" className="font-medium text-slate-900">Admin</Link>
+        </nav>
         <h1 data-gsap="fade-up" className="text-2xl font-bold mb-2">
           Admin Panel
         </h1>
         <p data-gsap="fade-up" className="text-slate-600 mb-8">
-          Manage products, inventory, and orders for CodeWithAsh Shop.
+          Manage products, inventory, and orders for Demo Shop.
         </p>
 
         <div

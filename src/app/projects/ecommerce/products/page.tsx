@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import StoreNav from "../StoreNav";
 
 type Cart = Record<string, number>;
 
@@ -62,14 +61,17 @@ export default function EcommerceProductsPage() {
 
   return (
     <main className="ecommerce-project min-h-screen bg-white text-slate-900 pb-16">
-      <StoreNav cartCount={count} />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-        <h1 data-gsap="fade-up" className="text-2xl font-bold mb-2">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-8">
+        <nav className="flex gap-4 text-sm text-slate-600 mb-6">
+          <Link href="/projects/ecommerce/products" className="font-medium text-slate-900">Products</Link>
+          <Link href="/projects/ecommerce/cart" className="hover:text-slate-900">Cart {count > 0 && `(${count})`}</Link>
+          <Link href="/projects/ecommerce/admin" className="hover:text-slate-900">Admin</Link>
+        </nav>
+        <h1 data-gsap="fade-up" className="text-2xl font-bold mb-2 text-slate-900">
           Products
         </h1>
-        <p className="text-base text-slate-800 mb-6">
-          Sample catalog for the CodeWithAsh Shop demo.
+        <p className="text-base font-semibold text-slate-900 mb-8">
+          Sample catalog for the Demo Shop.
         </p>
         {loading ? (
           <p data-gsap="fade-up" className="text-gray-400">

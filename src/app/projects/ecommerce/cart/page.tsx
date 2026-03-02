@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import StoreNav from "../StoreNav";
 
 type Cart = Record<string, number>;
 
@@ -64,9 +63,12 @@ export default function EcommerceCartPage() {
 
   return (
     <main className="ecommerce-project min-h-screen bg-white text-slate-900 pb-16">
-      <StoreNav cartCount={count} />
-
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
+        <nav className="flex gap-4 text-sm text-slate-600 mb-6">
+          <Link href="/projects/ecommerce/products" className="hover:text-slate-900">Products</Link>
+          <Link href="/projects/ecommerce/cart" className="font-medium text-slate-900">Cart {count > 0 && `(${count})`}</Link>
+          <Link href="/projects/ecommerce/admin" className="hover:text-slate-900">Admin</Link>
+        </nav>
         <h1 data-gsap="fade-up" className="text-2xl font-bold mb-2">
           Cart
         </h1>

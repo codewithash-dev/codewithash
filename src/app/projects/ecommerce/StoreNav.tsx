@@ -8,13 +8,13 @@ type StoreNavProps = {
 
 export default function StoreNav({ cartCount = 0 }: StoreNavProps) {
   return (
-    <header className="border-b border-slate-200 bg-white sticky top-14 z-40">
+    <header className="bg-white sticky top-14 z-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
         <Link
           href="/projects/ecommerce/products"
           className="font-semibold text-slate-900 hover:text-slate-700 transition"
         >
-          CodeWithAsh Shop
+          Demo Shop
         </Link>
         <nav className="flex items-center gap-6 text-sm text-slate-600">
           <Link
