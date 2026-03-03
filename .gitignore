@@ -42,3 +42,7 @@ next-env.d.ts
 
 # standalone ecommerce app (lives in codewithash-dev/ecommerce repo)
 /ecommerce-standalone
+
+# local sqlite for source access (use DATABASE_URL in .env)
+/prisma/*.db
+/prisma/*.db-journal

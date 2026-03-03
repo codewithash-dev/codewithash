@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
+import MainSiteShell from "@/app/components/MainSiteShell";
 import GSAPPageReveal from "@/app/components/GSAPPageReveal";
 import BackgroundStars from "@/app/components/BackgroundStars";
 import SmoothScroll from "@/app/components/SmoothScroll";
@@ -41,10 +40,10 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased bg-black text-white relative`}>
         <SmoothScroll>
           <BackgroundStars />
-          <SiteNav />
-          <GSAPPageReveal />
-          {children}
-          <SiteFooter />
+          <MainSiteShell>
+            <GSAPPageReveal />
+            {children}
+          </MainSiteShell>
         </SmoothScroll>
       </body>
     </html>

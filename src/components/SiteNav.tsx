@@ -16,7 +16,8 @@ export default function SiteNav() {
 
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800 min-h-14">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-14 py-2 flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-14 py-2 flex items-center gap-4">
+        {/* Left: logo / brand */}
         <Link
           href="/"
           className="btn-animate flex flex-shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition inline-flex min-w-0"
@@ -35,13 +36,13 @@ export default function SiteNav() {
               Code With Ash
             </span>
             <span className="text-[10px] sm:text-xs text-gray-400 font-normal leading-tight truncate max-w-[140px] sm:max-w-none sm:whitespace-nowrap">
-              Build something great!
+              Think Like A Visionary
             </span>
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-gray-300 shrink-0">
+        {/* Center: desktop nav links */}
+        <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-sm text-gray-300">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -53,12 +54,19 @@ export default function SiteNav() {
           ))}
         </div>
 
-        {/* Mobile hamburger + menu */}
-        <div className="flex md:hidden items-center shrink-0">
+        {/* Right: Supporters button + mobile hamburger */}
+        <div className="flex items-center gap-3 ml-auto">
+          <Link
+            href="/membership"
+            className="hidden md:inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black hover:bg-gray-100 transition"
+          >
+            Supporters
+          </Link>
+
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}
-            className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition"
+            className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition md:hidden"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
@@ -89,6 +97,13 @@ export default function SiteNav() {
                 {label}
               </Link>
             ))}
+            <Link
+              href="/membership"
+              className="btn-animate mt-2 py-3 px-2 text-white font-semibold transition rounded-full bg-white/10 hover:bg-white/20 text-center"
+              onClick={() => setMenuOpen(false)}
+            >
+              Supporters
+            </Link>
           </div>
         </div>
       )}

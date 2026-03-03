@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model UserSourceAccess {
+  id             String   @id @default(cuid())
+  email          String
+  projectSlug    String
+  source         String   // "purchase" | "membership"
+  stripeCustomerId String?
+  createdAt      DateTime @default(now())
+
+  @@unique([email, projectSlug])
+  @@index([email])
+  @@index([projectSlug])
+}
+
+model Membership {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  stripeCustomerId String?
+  stripeSubscriptionId String?
+  active         Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}

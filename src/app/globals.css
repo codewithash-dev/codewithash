@@ -86,6 +86,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global scrollbar styling so it stays visible on light pages (e.g. shop) */
+/* WebKit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #e5e7eb; /* light gray */
+}
+::-webkit-scrollbar-thumb {
+  background: #9ca3af; /* medium gray */
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* darker on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af #e5e7eb;
+}
+
 /* E-commerce: NUCLEAR — force every .ecommerce-cta to black; overrides gradient-cta and any other rule */
 .ecommerce-cta,
 .ecommerce-cta:hover,

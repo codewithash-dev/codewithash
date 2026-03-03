@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { PROJECTS } from "@/data/projects";
 
 const ALL_TECHS = [
   "All",
@@ -34,237 +35,6 @@ const ALL_TECHS = [
   "Swift",
   "HTML5",
   "CSS3",
-];
-
-type ProjectStatus = "live" | "soon";
-
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  status: ProjectStatus;
-  demoUrl?: string;
-  codeUrl?: string;
-  tags: string[];
-};
-
-const PROJECTS: Project[] = [
-  {
-    title: "E-Commerce Platform",
-    description: "Full-featured online store with cart, checkout, payments, and admin dashboard.",
-    demoUrl: "https://codewithash.com/projects/ecommerce",
-    codeUrl: "https://github.com/codewithash-dev/ecommerce",
-    tags: ["Next.js", "React", "Stripe", "Tailwind", "TypeScript", "SQL", "HTML5", "CSS3"],
-    image: "/projects/ecommerce.png",
-    status: "live",
-  },
-  {
-    title: "Creator Analytics & AI Insights",
-    description:
-      "Python + Next.js polyglot project that turns creator metrics into fast analytics APIs and AI-style insights.",
-    demoUrl: "/projects/creator-analytics",
-    codeUrl: "https://github.com/codewithash-dev/codewithash",
-    tags: ["Next.js", "React", "TypeScript", "Python", "JavaScript", "AI"],
-    image: "/projects/creator-analytics.png",
-    status: "live",
-  },
-  {
-    title: "Full Stack Social Media App",
-    description: "Instagram-style social app with posts, likes, comments, and profiles.",
-    demoUrl: "/projects/social-media/feed",
-    codeUrl: "https://github.com/codewithash-dev/social-media-app",
-    tags: ["Next.js", "Supabase", "Tailwind", "Expo", "TypeScript", "SQL", "HTML5", "CSS3"],
-    image: "/projects/social-media.png",
-    status: "live",
-  },
-  {
-    title: "Real Estate Platform",
-    description: "Real estate listings with filters, search, and property details.",
-    demoUrl: "/projects/real-estate",
-    codeUrl: "https://github.com/codewithash-dev/real-estate-platform",
-    tags: ["React", "Node.js", "MongoDB", "TypeScript", "HTML5", "CSS3"],
-    image: "/projects/real-estate-new.png",
-    status: "live",
-  },
-  {
-    title: "EcoSphere360 Sustainability Grid",
-    description:
-      "Cinematic sustainability intelligence platform with real-time environmental data, compliance tools, and farm readiness monitoring.",
-    demoUrl: "/projects/ecosphere-360",
-    codeUrl: "https://github.com/codewithash-dev/ecosphere-360",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind", "AI", "HTML5", "CSS3"],
-    image: "/mascot-icon.png",
-    status: "live",
-  },
-  {
-    title: "Fitness App",
-    description: "Workout tracking app with programs, exercises, and progress UI.",
-    demoUrl: "https://fitforge-expo.vercel.app",
-    codeUrl: "https://github.com/codewithash-dev/forge-fit-global",
-    tags: ["React Native", "Expo", "Firebase", "Tailwind", "JavaScript"],
-    image: "/projects/fitness.png",
-    status: "live",
-  },
-  {
-    title: "Login Credentials System",
-    description: "Secure credential vault with categories, notes, and Supabase auth.",
-    demoUrl: "/projects/login-credentials",
-    codeUrl: "https://github.com/codewithash-dev/login-credentials",
-    tags: ["React Native", "Expo", "Supabase", "TypeScript", "JavaScript", "SQL"],
-    image: "/projects/login-credentials.png",
-    status: "live",
-  },
-  {
-    title: "URL Shortener Mobile App",
-    description: "Shorten and manage links with a clean, mobile-first UI.",
-    demoUrl: "/projects/url-shortener/mobile-app",
-    codeUrl: "https://github.com/codewithash-dev/url-shortener",
-    tags: ["React Native", "Expo", "Tailwind", "JavaScript"],
-    image: "/projects/url-shortener.png",
-    status: "live",
-  },
-  {
-    title: "Lawn Care Style Portfolio",
-    description: "Marketing-style portfolio for a lawn care business with modern UI.",
-    demoUrl: "/projects/lawn-care",
-    codeUrl: undefined,
-    tags: ["Next.js", "Tailwind", "TypeScript", "HTML5", "CSS3"],
-    image: "/projects/lawn-care.png",
-    status: "live",
-  },
-  {
-    title: "Food Delivery App UI",
-    description: "High-fidelity food delivery app interface design.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/food-delivery-ui.png",
-    status: "soon",
-  },
-  {
-    title: "Course Learning App",
-    description: "Course learning platform UI for browsing and enrolling.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/course-learning.png",
-    status: "soon",
-  },
-  {
-    title: "Full Stack Chat App",
-    description: "Messaging experience with chats, contacts, and notifications.",
-    tags: ["React Native", "Expo", "JavaScript"],
-    image: "/projects/fullstack-chat.png",
-    status: "soon",
-  },
-  {
-    title: "Wallpaper App",
-    description: "Image browsing experience with filters and categories.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/wallpaper-app.png",
-    status: "soon",
-  },
-  {
-    title: "Firebase Auth & Chat",
-    description: "Authentication and chat flow powered by Firebase.",
-    tags: ["React Native", "Firebase", "JavaScript"],
-    image: "/projects/firebase-auth-chat.png",
-    status: "soon",
-  },
-  {
-    title: "Onboarding UI",
-    description: "Multi-screen onboarding flow for mobile apps.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/onboarding-ui.png",
-    status: "soon",
-  },
-  {
-    title: "AI Story Generator",
-    description: "AI-powered story creation experience for mobile.",
-    tags: ["React Native", "AI", "JavaScript"],
-    image: "/projects/ai-story-generator.png",
-    status: "soon",
-  },
-  {
-    title: "Travel App",
-    description: "Travel destination discovery and booking UI.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/travel-app.png",
-    status: "soon",
-  },
-  {
-    title: "Weather App",
-    description: "Weather app design with detailed forecast screens.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/weather-app.png",
-    status: "soon",
-  },
-  {
-    title: "Fast Food App",
-    description: "Food ordering interface for fast food restaurants.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/fast-food-app.png",
-    status: "soon",
-  },
-  {
-    title: "Ecommerce App UI",
-    description: "Ecommerce mobile app concept focused on products and cart.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/ecommerce.png",
-    status: "soon",
-  },
-  {
-    title: "Coffee App",
-    description: "Coffee shop ordering and discovery mobile UI.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/coffee-app.png",
-    status: "soon",
-  },
-  {
-    title: "Login & SignUp UI",
-    description: "Authentication flows with login and signup screens.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/login-credentials.png",
-    status: "soon",
-  },
-  {
-    title: "AI Voice Assistant",
-    description: "Mobile interface for a friendly AI voice assistant.",
-    tags: ["React Native", "AI", "JavaScript"],
-    image: "/projects/ai-voice-assistant.png",
-    status: "soon",
-  },
-  {
-    title: "Fruit Shop App",
-    description: "Fresh produce shopping experience with product cards.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/fruit-shop-app.png",
-    status: "soon",
-  },
-  {
-    title: "Food Delivery App",
-    description: "Food delivery listing and checkout experience.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/food-delivery-ui.png",
-    status: "soon",
-  },
-  {
-    title: "Expense Tracker App",
-    description: "Modern expense tracking UI with charts and categories.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/expense-tracker.png",
-    status: "soon",
-  },
-  {
-    title: "Movie App",
-    description: "Movie browsing app with trending, upcoming, and rated tabs.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/movie-app.png",
-    status: "soon",
-  },
-  {
-    title: "Youtube Clone",
-    description: "YouTube-style video feed with shorts and navigation.",
-    tags: ["React Native", "UI", "JavaScript"],
-    image: "/projects/youtube-clone.png",
-    status: "soon",
-  },
 ];
 
 export default function ProjectsPage() {
@@ -323,7 +93,7 @@ export default function ProjectsPage() {
         <div data-gsap="fade-up" data-gsap-stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
           {visibleProjects.map((project) => (
             <article
-              key={project.title}
+              key={project.slug}
               data-gsap-item
               className="rounded-2xl overflow-hidden border border-gray-800 bg-[#050816] hover:border-fuchsia-500/80 hover:shadow-[0_0_40px_rgba(217,70,239,0.4)] transition"
             >
@@ -357,24 +127,20 @@ export default function ProjectsPage() {
                       <div className="flex gap-3">
                         <Link
                           href={project.demoUrl ?? "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={project.demoUrl?.startsWith("http") ? "_blank" : undefined}
+                          rel={project.demoUrl?.startsWith("http") ? "noopener noreferrer" : undefined}
                           className="btn-animate inline-flex items-center gap-1 hover:text-fuchsia-300 transition-transform"
                         >
                           <span>▶</span>
                           <span>Demo</span>
                         </Link>
-                        {project.codeUrl && (
-                          <Link
-                            href={project.codeUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-animate inline-flex items-center gap-1 hover:text-fuchsia-300 transition-transform"
-                          >
-                            <span>{"</>"}</span>
-                            <span>Code</span>
-                          </Link>
-                        )}
+                        <Link
+                          href="/shop"
+                          className="btn-animate inline-flex items-center gap-1 hover:text-fuchsia-300 transition-transform"
+                        >
+                          <span>{"</>"}</span>
+                          <span>Source Code</span>
+                        </Link>
                       </div>
                     </>
                   ) : (
