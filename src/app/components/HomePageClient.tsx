@@ -169,22 +169,30 @@ export default function HomePageClient() {
       {/* Stats - colored numbers */}
       <section className="py-16 px-4 sm:px-6 text-center bg-transparent">
         <div ref={statsRef} className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
             <div data-stat className="text-center">
               <p className="text-3xl sm:text-4xl font-bold text-fuchsia-400">300+</p>
               <p className="text-gray-400 mt-1">Projects Built</p>
             </div>
             <div data-stat className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-emerald-400">1000</p>
-              <p className="text-gray-400 mt-1">Commits</p>
+              <p className="text-3xl sm:text-4xl font-bold text-emerald-400">1,000+</p>
+              <p className="text-gray-400 mt-1">GitHub Commits</p>
             </div>
             <div data-stat className="text-center">
               <p className="text-3xl sm:text-4xl font-bold text-rose-400">10+</p>
               <p className="text-gray-400 mt-1">Years Coding</p>
             </div>
             <div data-stat className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-amber-400">200+</p>
-              <p className="text-gray-400 mt-1">Tech Stacks</p>
+              <p className="text-3xl sm:text-4xl font-bold text-amber-400">15+</p>
+              <p className="text-gray-400 mt-1">Client Apps Shipped</p>
+            </div>
+            <div data-stat className="text-center">
+              <p className="text-3xl sm:text-4xl font-bold text-sky-400">200k+</p>
+              <p className="text-gray-400 mt-1">Combined Video Views</p>
+            </div>
+            <div data-stat className="text-center">
+              <p className="text-3xl sm:text-4xl font-bold text-lime-400">6+</p>
+              <p className="text-gray-400 mt-1">Stacks in Production</p>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ export default function BackgroundStars() {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
       const size = Math.random() * 3 + 2;
-      const delay = Math.random() * 2;
+      const delay = Math.random() * 1.5;
 
       star.style.left = `${x}%`;
       star.style.top = `${y}%`;
@@ -26,8 +26,8 @@ export default function BackgroundStars() {
       star.style.height = `${size}px`;
 
       gsap.to(star, {
-        opacity: 0.2 + Math.random() * 0.25,
-        duration: 2 + Math.random() * 2,
+        opacity: 0.15 + Math.random() * 0.5,
+        duration: 0.8 + Math.random() * 1.2,
         repeat: -1,
         yoyo: true,
         delay,
