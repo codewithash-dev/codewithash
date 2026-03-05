@@ -19,6 +19,7 @@ type SupportShellProps = {
 
 export default function SupportShell({ active, children }: SupportShellProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,7 +82,7 @@ export default function SupportShell({ active, children }: SupportShellProps) {
             </div>
           </div>
 
-          {/* Center: tabs, truly centered within header */}
+          {/* Center: tabs — visible on mobile, perfectly centered on desktop */}
           <nav className="hidden md:flex items-center gap-6 text-sm absolute inset-x-0 justify-center pointer-events-none">
             {tabs.map((tab) => (
               <Link
@@ -100,12 +101,26 @@ export default function SupportShell({ active, children }: SupportShellProps) {
             ))}
           </nav>
 
-          {/* Right: menu + login */}
+          {/* Right: menu + login / hamburger */}
           <div className="flex items-center gap-3 relative ml-auto" ref={menuRef}>
+            {/* Mobile hamburger for tabs */}
+            <button
+              type="button"
+              onClick={() => setMobileNavOpen((open) => !open)}
+              className="p-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:text-gray-900 hover:border-gray-400 transition md:hidden"
+              aria-label="Toggle navigation"
+              aria-expanded={mobileNavOpen}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+
+            {/* Desktop three-dots menu */}
             <button
               type="button"
               onClick={() => setMenuOpen((o) => !o)}
-              className="hidden sm:inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-2 py-1 text-gray-500 hover:text-gray-700 hover:border-gray-400"
+              className="hidden md:inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-2 py-1 text-gray-500 hover:text-gray-700 hover:border-gray-400"
               aria-label="More options"
               aria-expanded={menuOpen}
             >
@@ -142,6 +157,28 @@ export default function SupportShell({ active, children }: SupportShellProps) {
           </div>
         </div>
       </header>
+
+      {/* Mobile nav dropdown for tabs */}
+      {mobileNavOpen && (
+        <div className="md:hidden border-b border-gray-200 bg-white">
+          <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
+            {tabs.map((tab) => (
+              <Link
+                key={tab.id}
+                href={tab.href}
+                className={
+                  active === tab.id
+                    ? "font-semibold text-gray-900 border-b-2 border-gray-900 pb-1"
+                    : "text-gray-500 hover:text-gray-900"
+                }
+                onClick={() => setMobileNavOpen(false)}
+              >
+                {tab.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {active !== "shop" && (
         <div className="border-b border-gray-200 bg-white">
