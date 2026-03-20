@@ -13,6 +13,7 @@ import {
   FaTwitch,
   FaDiscord,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import type { Project } from "@/data/projects";
 
 const SHOP_TABS = [
@@ -25,6 +26,7 @@ const SHOP_TABS = [
 const SHOP_SOCIALS = [
   { icon: FaYoutube, href: "https://www.youtube.com/@CodeWithAshOfficial", label: "YouTube" },
   { icon: FaInstagram, href: "https://instagram.com/_codewithash", label: "Instagram" },
+  { icon: FaXTwitter, href: "https://x.com/codewithash_dev", label: "X" },
   { icon: FaTwitch, href: "https://twitch.tv/codewithash", label: "Twitch" },
   { icon: FaDiscord, href: "https://discord.gg/codewithash", label: "Discord" },
 ];

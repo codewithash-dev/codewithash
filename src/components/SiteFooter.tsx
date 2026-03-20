@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { FaYoutube, FaInstagram, FaTiktok, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const socials = [
   { icon: FaYoutube, href: "https://www.youtube.com/@CodeWithAshOfficial", label: "YouTube" },
   { icon: FaInstagram, href: "https://instagram.com/_codewithash", label: "Instagram" },
+  { icon: FaXTwitter, href: "https://x.com/codewithash_dev", label: "X" },
   { icon: FaTiktok, href: "https://tiktok.com/@_codewithash", label: "TikTok" },
   { icon: FaFacebook, href: "https://www.facebook.com/CodeWithAshOfficial", label: "Facebook" },
   { icon: FaGithub, href: "https://github.com/codewithash-dev", label: "GitHub" },

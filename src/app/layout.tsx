@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Code with Ash",
     description: "Portfolio & Projects by Ashley Henderson",
+    creator: "@codewithash_dev",
   },
 };
 

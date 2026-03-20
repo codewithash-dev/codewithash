@@ -4,10 +4,12 @@ import { type ReactNode, useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaYoutube, FaInstagram, FaTwitch, FaDiscord, FaUserPlus, FaShare } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const socials = [
   { icon: FaYoutube, href: "https://www.youtube.com/@CodeWithAshOfficial", label: "YouTube" },
   { icon: FaInstagram, href: "https://instagram.com/_codewithash", label: "Instagram" },
+  { icon: FaXTwitter, href: "https://x.com/codewithash_dev", label: "X" },
   { icon: FaTwitch, href: "https://twitch.tv/codewithash", label: "Twitch" },
   { icon: FaDiscord, href: "https://discord.gg/codewithash", label: "Discord" },
 ];
